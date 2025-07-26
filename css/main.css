@@ -377,22 +377,22 @@ a.btn.disabled {
 .btn-primary {
   color: #fff;
   background-color: #990000;
-  border-color: #990000; }
+  border-color: #b30000; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #019f71;
-    border-color: #019268; }
+    background-color: #990000;
+    border-color: #b30000; }
   .btn-primary:focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(1, 197, 140, 0.5);
             box-shadow: 0 0 0 0.2rem rgba(1, 197, 140, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
     background-color: #990000;
-    border-color: #990000; }
+    border-color: #b30000; }
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active {
     color: #fff;
-    background-color: #019268;
-    border-color: #01865f; }
+    background-color: #990000
+    border-color: #b30000; }
     .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(1, 197, 140, 0.5);
               box-shadow: 0 0 0 0.2rem rgba(1, 197, 140, 0.5); }
