@@ -18,7 +18,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #01c58c;
+  --primary: #990000;
   --secondary: #333;
   --success: #28a745;
   --info: #17a2b8;
@@ -376,8 +376,8 @@ a.btn.disabled {
 
 .btn-primary {
   color: #fff;
-  background-color: #01c58c;
-  border-color: #01c58c; }
+  background-color: #990000;
+  border-color: #990000; }
   .btn-primary:hover {
     color: #fff;
     background-color: #019f71;
@@ -387,8 +387,8 @@ a.btn.disabled {
             box-shadow: 0 0 0 0.2rem rgba(1, 197, 140, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
-    background-color: #01c58c;
-    border-color: #01c58c; }
+    background-color: #990000;
+    border-color: #990000; }
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active {
     color: #fff;
     background-color: #019268;
@@ -653,7 +653,7 @@ a.text-light:hover, a.text-light:focus {
     color: #fff; }
 
 .color-brand {
-  color: #01c58c; }
+  color: #990000; }
 /* Slider */
 .slick-slider {
   position: relative;
@@ -768,9 +768,9 @@ a.text-light:hover, a.text-light:focus {
       border-radius: 100%;
       text-indent: -9999px;
       background: #fff !important;
-      border: 1px solid #01c58c; }
+      border: 1px solid #990000; }
     .slick-dots li.slick-active button {
-      background: #01c58c !important; }
+      background: #990000 !important; }
 
 .slick-arrow {
   position: absolute;
@@ -1216,7 +1216,7 @@ button.css3button {
   line-height: 1;
   text-transform: uppercase;
   white-space: normal;
-  background: #01c58c;
+  background: #990000;
   color: #fff !important;
   font-weight: bold;
   text-decoration: none;
@@ -1358,7 +1358,7 @@ form {
         left: 0;
         width: 11px;
         height: 11px;
-        border: 2px solid #01c58c; }
+        border: 2px solid #990000; }
       form input[type=checkbox] ~ label:after,
       form input[type=checkbox] ~ span:after,
       form input[type=radio] ~ label:after,
@@ -1368,7 +1368,7 @@ form {
         width: 7px;
         height: 7px;
         opacity: 0;
-        background: #01c58c; }
+        background: #990000; }
     form input[type=checkbox] ~ label.error,
     form input[type=radio] ~ label.error {
       position: absolute;
