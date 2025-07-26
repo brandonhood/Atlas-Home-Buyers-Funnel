@@ -1524,3 +1524,25 @@ section {
   section.testimonials .star-rating i {
     font-size: 1.5rem;
     color: #fec107; }
+
+/* Force override for ALL primary-like buttons */
+button,
+input[type="submit"],
+.gform_button,
+.submit-button {
+  background-color: #990000 !important;
+  border: 1px solid #cc0000 !important;
+  color: #fff !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.gform_button:hover,
+.submit-button:hover {
+  background-color: #7a0000 !important;
+  border-color: #990000 !important;
+  color: #fff !important;
+}
