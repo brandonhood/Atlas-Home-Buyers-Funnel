@@ -1524,3 +1524,21 @@ section {
   section.testimonials .star-rating i {
     font-size: 1.5rem;
     color: #fec107; }
+
+/* Primary button override */
+.btn-primary,
+.main-btn,
+.agency-btn {
+  background-color: #990000 !important;
+  border-color: #990000 !important;
+  color: #fff !important;
+}
+
+/* Hover state */
+.btn-primary:hover,
+.main-btn:hover,
+.agency-btn:hover {
+  background-color: #7a0000 !important;
+  border-color: #7a0000 !important;
+  color: #fff !important;
+}
