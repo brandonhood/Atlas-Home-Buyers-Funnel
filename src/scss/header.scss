@@ -1,0 +1,138 @@
+header {
+    position: relative;
+    padding: 15px;
+    z-index: 999 !important;
+    
+    &.scrolled {
+        background: #e2e6e9;
+        box-shadow: -3px -3px 7px 4px rgba(0, 0, 0, 0.03);
+        transition: 0.2s ease-in-out;
+    }
+}
+
+.header-logo img {
+    width: 150px;
+
+    transition: .4s ease-in-out;
+
+    @include media-breakpoint-up(md) {
+        width: 200px;
+    }
+    .scrolled & {
+        width: 100px;
+        @include media-breakpoint-up(md) {
+            width: 150px;
+        }
+    }
+}
+
+.header-phone {
+    font-family: $header-font;
+    color: $secondary;
+    text-decoration: none;
+    .phone-text {
+        line-height: 1.5;
+    }
+    i {
+        font-family: "Font Awesome 5 Free";
+        font-size: 1.5rem;
+        font-style: normal;
+    }
+    em {
+        font-style: normal;
+        font-weight: bold;
+    }
+}
+
+.header-with-menu {
+    justify-content: unset;
+    .header-logo {
+        flex: 2;
+    }
+    .header-phone-container {
+        max-width: 40px;
+        @include media-breakpoint-up(md) {
+            max-width: 220px;
+        
+        }
+    }
+    .header-phone-container,
+    .header-menu {
+        flex: 1;
+    }
+    
+    .header-menu {
+        max-width: 60px;
+        @include media-breakpoint-up(md) {
+            max-width: 80px;
+        
+        }
+        &-icon,
+        &-close {
+            margin-bottom: 0;
+            i {
+                font-family: "Font Awesome 5 Free";
+                font-size: 1.5rem;
+                line-height: 1;
+                font-style: normal;
+                color: $secondary;
+            }
+        }
+        &-icon {
+            .vc_icon_element-inner {
+                height: 100%;    
+            }
+        }
+        &-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            @include media-breakpoint-up(md) {
+                top: 48px;
+                right: 48px;
+            }
+        }
+        &-overlay {
+            position: fixed;
+            top: 0;
+            right: -100vw;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -100;
+            transition: .5s;
+            background: rgba( $light, .95);
+            opacity: 0;
+            &.active {
+                opacity: 1;
+                pointer-events: all;
+                z-index: 1000;
+                right: 0;
+
+            }
+
+            .header-menu-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                ul {
+                    padding: 0;
+                    li.menu-item {
+                        list-style: none;
+                        font-size: 2rem;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        text-align: center;
+                        margin-bottom: 20px;
+                        a {
+                            text-decoration: none;
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

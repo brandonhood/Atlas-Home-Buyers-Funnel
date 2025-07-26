@@ -1,0 +1,35 @@
+// --------------------
+// BUTTON STYLE
+//---------------------
+
+.btn,
+button,
+input[type=submit],
+input[type=button],
+button.css3button {
+    display: block;
+    width: 100%;
+    margin: 0 auto 12px;
+    border: 0;
+    border-radius: 5px;
+    padding: 20px 5px;
+    font-size: 1.2rem;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: normal;
+    background: $primary;
+    color: #fff !important;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color .4s ease-in-out;
+    &:hover,
+    &:focus,
+    &:active {
+        color: #fff !important;
+        background: rgba($primary, .8);
+    }
+    @include media-breakpoint-up(md) {
+        letter-spacing: 2px;
+        padding: 30px 10px;
+    }
+}
