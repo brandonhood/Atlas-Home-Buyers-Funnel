@@ -11,8 +11,8 @@ const // modules
 
 
     // Folders
-    src = "assets/src/",
-    build = "assets/";
+   const src = "src/";
+const build = "./";
 
 // CSS processing
 function css() {
