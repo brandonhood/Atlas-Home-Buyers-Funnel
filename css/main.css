@@ -383,8 +383,8 @@ a.btn.disabled {
     background-color: #990000;
     border-color: #b30000; }
   .btn-primary:focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(1, 197, 140, 0.5);
-            box-shadow: 0 0 0 0.2rem rgba(1, 197, 140, 0.5); }
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(153, 0, 0, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(153, 0, 0, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
     background-color: #990000;
@@ -394,8 +394,8 @@ a.btn.disabled {
     background-color: #990000
     border-color: #b30000; }
     .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus {
-      -webkit-box-shadow: 0 0 0 0.2rem rgba(1, 197, 140, 0.5);
-              box-shadow: 0 0 0 0.2rem rgba(1, 197, 140, 0.5); }
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(153, 0, 0, 0.5);
+              box-shadow: 0 0 0 0.2rem rgba(153, 0, 0, 0.5); }
 
 .nav {
   display: -webkit-box;
