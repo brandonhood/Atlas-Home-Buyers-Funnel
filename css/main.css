@@ -1502,10 +1502,6 @@ section {
       padding: 120px 0px; } }
   section.hero-landing, section.hero-ebook, section.hero-webinar {
     padding-top: 80px; }
-    background-image: images/Clean Desktop Background.png:
-    background-size: 150%;
-    background-position: center top;
-    background-repeat: no-repeat;
     @media (min-width: 768px) {
       section.hero-landing, section.hero-ebook, section.hero-webinar {
         padding-top: 150px; } }
