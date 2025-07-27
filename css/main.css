@@ -973,7 +973,7 @@ img.ebook-cover {
   max-width: 200px; }
   @media (min-width: 768px) {
     img.ebook-cover {
-      max-width: 300px; } }
+      max-width: 500px; } }
   @media (min-width: 992px) {
     img.ebook-cover {
       max-width: 100%; } }
