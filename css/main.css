@@ -1548,3 +1548,8 @@ input[type="submit"]:hover,
   border-color:     #7a0000 !important;
   color:            #fff !important;
 }
+
+/* target your inline form iframe by its ID */
+#inline-rHfQGFndwwZVZlxBkUWa {
+  height: 1000px !important;
+}
