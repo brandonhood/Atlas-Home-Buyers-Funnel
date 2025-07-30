@@ -1553,3 +1553,11 @@ input[type="submit"]:hover,
 #inline-rHfQGFndwwZVZlxBkUWa {
   height: 1000px !important;
 }
+
+/* shrink only our Google + BBB badges */
+.credentials img {
+  max-width: 140px; /* adjust up/down as needed */
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
