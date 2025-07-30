@@ -1553,3 +1553,9 @@ input[type="submit"]:hover,
 #inline-rHfQGFndwwZVZlxBkUWa {
   height: 1000px !important;
 }
+
+/* tighten up that form+cred section */
+.two-column {
+  padding-top: 2rem;    /* was 3rem (pt-5) */
+  padding-bottom: 1rem; /* was 3rem (pb-5) */
+}
