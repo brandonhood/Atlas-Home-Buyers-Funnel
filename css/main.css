@@ -1564,3 +1564,9 @@ input[type="submit"]:hover,
 .offer-questionnaire .single-column + .two-column {
   padding-top: 0;
 }
+
+@media (max-width: 767.98px) {
+  body.offer-questionnaire .hero-landing .container {
+    padding: 4rem 1rem;  /* keep your vertical spacing, but give 1rem on left+right */
+  }
+}
