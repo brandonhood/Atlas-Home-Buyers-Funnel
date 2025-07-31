@@ -1568,3 +1568,9 @@ input[type="submit"]:hover,
   background: none !important;
   opacity: 1 !important;
 }
+
+/* completely remove the popup backdrop */
+#popup-form-container {
+  background: none !important;
+  opacity: 1 !important;
+}
