@@ -1558,4 +1558,13 @@ input[type="submit"]:hover,
 .two-column {
   padding-top: 2rem;    /* was 3rem (pt-5) */
   padding-bottom: 1rem; /* was 3rem (pb-5) */
+
+}
+.popup-form-overlay {
+  background: none !important;
+}
+
+.popup-form-overlay {
+  background: none !important;
+  opacity: 1 !important;
 }
