@@ -1482,6 +1482,7 @@ div._error-inner {
     width: 100%;
     max-width: 700px;
     padding: 60px 24px;
+    padding-bottom: 80px;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
     @media (min-width: 768px) {
@@ -1570,4 +1571,12 @@ input[type="submit"]:hover,
 #popup-form-container .form-container {
   overflow: visible;
   padding-bottom: 4rem; /* give the shadow room */
+}
+
+/* make the embedded iframe shrink so it doesn’t bleed into that 20px shadow-zone */
+#popup-form-container .form-container iframe {
+  width: 100%;
+  height: calc(100% - 20px) !important;  /* subtract the extra shadow padding */
+  border: none;
+  border-radius: 4px;
 }
