@@ -1564,3 +1564,10 @@ input[type="submit"]:hover,
 .offer-questionnaire .single-column + .two-column {
   padding-top: 0;
 }
+
+
+/* only affect the popup’s “form-container” wrapper */
+#popup-form-container .form-container {
+  overflow: visible;
+  padding-bottom: 4rem; /* give the shadow room */
+}
