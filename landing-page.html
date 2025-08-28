@@ -78,33 +78,32 @@
         <h5>As Seen In</h5>
       </div>
 
-      <!-- FOX -->
-      <div class="col-4 col-md-2 mb-4 mb-md-0">
-        <img class="img-fluid lazyload" data-src="images/Fox Logo.svg" alt="Fox Logo">
-      </div>
-
-      <!-- NBC -->
-      <div class="col-4 col-md-2 mb-4 mb-md-0">
-        <img class="img-fluid lazyload" data-src="images/NBC Logo.svg" alt="NBC Logo">
-      </div>
-
-      <!-- CBS -->
-      <div class="col-4 col-md-2 mb-4 mb-md-0">
-        <img class="img-fluid lazyload" data-src="images/CBS Logo.svg" alt="CBS Logo">
-      </div>
-
-      <!-- ABC -->
-      <div class="col-4 col-md-2 mb-4 mb-md-0">
-        <img class="img-fluid lazyload" data-src="images/ABC News Logo.svg" alt="ABC News Logo">
-      </div>
-
-      <!-- Benzinga -->
-      <div class="col-4 col-md-2">
-        <img class="img-fluid lazyload" data-src="images/Bezinga Logo.svg" alt="Bezinga Logo">
+      <!-- Logos -->
+      <div class="col d-flex justify-content-center align-items-center flex-wrap">
+        <img class="seen-logo" src="images/Fox Logo.svg" alt="Fox Logo">
+        <img class="seen-logo" src="images/NBC Logo.svg" alt="NBC Logo">
+        <img class="seen-logo" src="images/CBS Logo.svg" alt="CBS Logo">
+        <img class="seen-logo" src="images/ABC News Logo.svg" alt="ABC News Logo">
+        <img class="seen-logo" src="images/Bezinga Logo.svg" alt="Bezinga Logo">
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .seen-in-band .seen-logo {
+    max-height: 50px;       /* 🔧 adjust height here */
+    margin: 0 15px;         /* spacing between logos */
+    width: auto;
+  }
+
+  @media (max-width: 576px) {
+    .seen-in-band .seen-logo {
+      max-height: 40px;     /* slightly smaller on mobile */
+      margin: 10px;
+    }
+  }
+</style>
 
 <!-- Two Column - Image Right, Content Left -->
 <section class="two-column">
