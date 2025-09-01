@@ -176,28 +176,27 @@
 <!-- Custom Script -->
 <script type="text/javascript" src="js/main.js"></script>
 
-<!-- Meta Pixel: Fire Qualified Lead or CompleteRegistration -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const isSubmitted = urlParams.get('submitted') === 'questionnaire';
     const eventName = 'CompleteRegistration';
     const dedupeKey = `fbq_${eventName}_lastFired`;
-
-    // Get last fire timestamp
-    const lastFired = localStorage.getItem(dedupeKey);
     const now = Date.now();
     const sevenDays = 7 * 24 * 60 * 60 * 1000;
 
-    // Only fire if it's been more than 7 days
-    if (window.location.href.includes("submitted=questionnaire") &&
-        (!lastFired || now - Number(lastFired) > sevenDays)) {
+    const lastFired = localStorage.getItem(dedupeKey);
 
-      fbq('track', eventName); // or 'trackCustom' if needed
-      console.log("Meta CompleteRegistration event fired");
-
-      // Set the timestamp
-      localStorage.setItem(dedupeKey, now);
-    } else {
-      console.log("Duplicate CompleteRegistration prevented (already fired within 7 days)");
+    if (isSubmitted && (!lastFired || now - Number(lastFired) > sevenDays)) {
+      try {
+        fbq('track', eventName);
+        console.log(`[Meta Pixel] ${eventName} event fired`);
+        localStorage.setItem(dedupeKey, now);
+      } catch (e) {
+        console.warn(`[Meta Pixel] Error firing ${eventName}:`, e);
+      }
+    } else if (isSubmitted) {
+      console.log(`[Meta Pixel] Duplicate ${eventName} prevented (fired within last 7 days)`);
     }
   });
 </script>
