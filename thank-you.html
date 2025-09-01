@@ -175,6 +175,33 @@
 <script type="text/javascript" src="js/vendor/jquery.validate.min.js"></script>
 <!-- Custom Script -->
 <script type="text/javascript" src="js/main.js"></script>
+
+<!-- Meta Pixel: Fire Qualified Lead or CompleteRegistration -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const eventName = 'CompleteRegistration';
+    const dedupeKey = `fbq_${eventName}_lastFired`;
+
+    // Get last fire timestamp
+    const lastFired = localStorage.getItem(dedupeKey);
+    const now = Date.now();
+    const sevenDays = 7 * 24 * 60 * 60 * 1000;
+
+    // Only fire if it's been more than 7 days
+    if (window.location.href.includes("submitted=questionnaire") &&
+        (!lastFired || now - Number(lastFired) > sevenDays)) {
+
+      fbq('track', eventName); // or 'trackCustom' if needed
+      console.log("Meta CompleteRegistration event fired");
+
+      // Set the timestamp
+      localStorage.setItem(dedupeKey, now);
+    } else {
+      console.log("Duplicate CompleteRegistration prevented (already fired within 7 days)");
+    }
+  });
+</script>
+     
 </body>
 
 </html>
