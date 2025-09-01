@@ -437,12 +437,20 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const submitted = urlParams.get('submitted');
+    const isSubmitted = urlParams.get('submitted') === 'true';
+    const eventName = 'Lead';
+    const dedupeKey = `fbq_${eventName}_lastFired`;
+    const now = Date.now();
+    const sevenDays = 7 * 24 * 60 * 60 * 1000; // 7 days in ms
 
-    if (submitted === 'true' && !localStorage.getItem('leadFired')) {
-      fbq('track', 'Lead');
-      console.log("Meta Lead event fired on landing-page");
-      localStorage.setItem('leadFired', 'true');
+    const lastFired = localStorage.getItem(dedupeKey);
+
+    if (isSubmitted && (!lastFired || now - Number(lastFired) > sevenDays)) {
+      fbq('track', eventName);
+      localStorage.setItem(dedupeKey, now);
+      console.log(`[Meta Pixel] ${eventName} event fired`);
+    } else if (isSubmitted) {
+      console.log(`[Meta Pixel] Duplicate ${eventName} prevented (fired within last 7 days)`);
     }
   });
 </script>
