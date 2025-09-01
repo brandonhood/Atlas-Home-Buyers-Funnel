@@ -257,6 +257,30 @@
 <script type="text/javascript" src="js/vendor/jquery.validate.min.js"></script>
 <!-- Custom Script -->
 <script type="text/javascript" src="js/main.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const viewBtn = document.querySelector(".popup-form-trigger");
+    const eventName = 'ViewContent';
+    const dedupeKey = `fbq_${eventName}_lastFired`;
+    const lastFired = localStorage.getItem(dedupeKey);
+    const now = Date.now();
+    const sevenDays = 7 * 24 * 60 * 60 * 1000;
+
+    if (viewBtn) {
+      viewBtn.addEventListener("click", function () {
+        if (!lastFired || now - Number(lastFired) > sevenDays) {
+          fbq('track', eventName);
+          console.log("ViewContent fired");
+          localStorage.setItem(dedupeKey, now);
+        } else {
+          console.log("Duplicate ViewContent prevented");
+        }
+      });
+    }
+  });
+</script>
+
 </body>
 
 </html>
