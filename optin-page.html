@@ -260,24 +260,29 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const viewBtn = document.querySelector(".popup-form-trigger");
     const eventName = 'ViewContent';
     const dedupeKey = `fbq_${eventName}_lastFired`;
     const lastFired = localStorage.getItem(dedupeKey);
     const now = Date.now();
     const sevenDays = 7 * 24 * 60 * 60 * 1000;
 
-    if (viewBtn) {
-      viewBtn.addEventListener("click", function () {
+    const viewBtns = document.querySelectorAll(".popup-form-trigger");
+
+    viewBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
         if (!lastFired || now - Number(lastFired) > sevenDays) {
-          fbq('track', eventName);
-          console.log("ViewContent fired");
-          localStorage.setItem(dedupeKey, now);
+          try {
+            fbq('track', eventName);
+            console.log("ViewContent fired");
+            localStorage.setItem(dedupeKey, now);
+          } catch (e) {
+            console.warn("Meta Pixel not loaded: ", e);
+          }
         } else {
           console.log("Duplicate ViewContent prevented");
         }
       });
-    }
+    });
   });
 </script>
 
