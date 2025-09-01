@@ -439,9 +439,10 @@
     const urlParams = new URLSearchParams(window.location.search);
     const submitted = urlParams.get('submitted');
 
-    if (submitted === 'true') {
+    if (submitted === 'true' && !localStorage.getItem('leadFired')) {
       fbq('track', 'Lead');
       console.log("Meta Lead event fired on landing-page");
+      localStorage.setItem('leadFired', 'true');
     }
   });
 </script>
