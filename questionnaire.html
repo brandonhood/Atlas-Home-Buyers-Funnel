@@ -238,6 +238,32 @@
 <script type="text/javascript" src="js/vendor/jquery.validate.min.js"></script>
 <!-- Custom Script -->
 <script type="text/javascript" src="js/main.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const eventName = 'Lead';
+    const dedupeKey = `fbq_${eventName}_lastFired`;
+    const lastFired = localStorage.getItem(dedupeKey);
+    const now = Date.now();
+    const sevenDays = 7 * 24 * 60 * 60 * 1000;
+
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        if (!lastFired || now - Number(lastFired) > sevenDays) {
+          setTimeout(function () {
+            fbq('track', eventName);
+            console.log("Meta Lead event fired");
+            localStorage.setItem(dedupeKey, now);
+          }, 500);
+        } else {
+          console.log("Duplicate Lead event prevented (already fired within 7 days)");
+        }
+      });
+    }
+  });
+</script>
+
 </body>
 
 </html>
