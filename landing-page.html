@@ -433,6 +433,19 @@
 <script type="text/javascript" src="js/vendor/jquery.validate.min.js"></script>
 <!-- Custom Script -->
 <script type="text/javascript" src="js/main.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const submitted = urlParams.get('submitted');
+
+    if (submitted === 'true') {
+      fbq('track', 'Lead');
+      console.log("Meta Lead event fired on landing-page");
+    }
+  });
+</script>
+
 </body>
 
 </html>
