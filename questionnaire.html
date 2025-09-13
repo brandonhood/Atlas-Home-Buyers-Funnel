@@ -241,25 +241,24 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
+    const urlParams = new URLSearchParams(window.location.search);
+    const isSubmitted = urlParams.get('submitted') === 'true';
     const eventName = 'Lead';
     const dedupeKey = `fbq_${eventName}_lastFired`;
     const lastFired = localStorage.getItem(dedupeKey);
     const now = Date.now();
     const sevenDays = 7 * 24 * 60 * 60 * 1000;
 
-    if (form) {
-      form.addEventListener("submit", function (event) {
-        if (!lastFired || now - Number(lastFired) > sevenDays) {
-          setTimeout(function () {
-            fbq('track', eventName);
-            console.log("Meta Lead event fired");
-            localStorage.setItem(dedupeKey, now);
-          }, 500);
-        } else {
-          console.log("Duplicate Lead event prevented (already fired within 7 days)");
-        }
-      });
+    if (isSubmitted && (!lastFired || now - Number(lastFired) > sevenDays)) {
+      try {
+        fbq('track', eventName);
+        console.log("Meta Lead event fired");
+        localStorage.setItem(dedupeKey, now);
+      } catch (e) {
+        console.warn("Meta Pixel not loaded: ", e);
+      }
+    } else if (isSubmitted) {
+      console.log("Duplicate Lead event prevented");
     }
   });
 </script>
