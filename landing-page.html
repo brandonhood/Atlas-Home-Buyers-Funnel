@@ -436,19 +436,19 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const eventName = 'ViewContent';
-    const dedupeKey = `fbq_${eventName}_lastFired`;
+    const urlParams = new URLSearchParams(window.location.search);
+    const isSubmitted = urlParams.get('submitted') === 'true';
+    const dedupeKey = 'fbq_Lead_lastFired';
     const now = Date.now();
-    const cooldown = 24 * 60 * 60 * 1000; // 1 day
-
+    const sevenDays = 7 * 24 * 60 * 60 * 1000;
     const lastFired = localStorage.getItem(dedupeKey);
 
-    if (!lastFired || now - Number(lastFired) > cooldown) {
-      fbq('track', eventName);
+    if (isSubmitted && (!lastFired || now - Number(lastFired) > sevenDays)) {
+      fbq('track', 'Lead');
       localStorage.setItem(dedupeKey, now);
-      console.log(`[Meta Pixel] ${eventName} event fired`);
-    } else {
-      console.log(`[Meta Pixel] Duplicate ${eventName} prevented`);
+      console.log('[Meta Pixel] Lead event fired');
+    } else if (isSubmitted) {
+      console.log('[Meta Pixel] Duplicate Lead prevented');
     }
   });
 </script>
