@@ -264,25 +264,19 @@
     const dedupeKey = `fbq_${eventName}_lastFired`;
     const lastFired = localStorage.getItem(dedupeKey);
     const now = Date.now();
-    const sevenDays = 7 * 24 * 60 * 60 * 1000;
+    const cooldown = 24 * 60 * 60 * 1000; // 1 day
 
-    const viewBtns = document.querySelectorAll(".popup-form-trigger");
-
-    viewBtns.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        if (!lastFired || now - Number(lastFired) > sevenDays) {
-          try {
-            fbq('track', eventName);
-            console.log("ViewContent fired");
-            localStorage.setItem(dedupeKey, now);
-          } catch (e) {
-            console.warn("Meta Pixel not loaded: ", e);
-          }
-        } else {
-          console.log("Duplicate ViewContent prevented");
-        }
-      });
-    });
+    if (!lastFired || now - Number(lastFired) > cooldown) {
+      try {
+        fbq('track', eventName);
+        console.log("ViewContent fired");
+        localStorage.setItem(dedupeKey, now);
+      } catch (e) {
+        console.warn("Meta Pixel not loaded: ", e);
+      }
+    } else {
+      console.log("Duplicate ViewContent prevented");
+    }
   });
 </script>
 
