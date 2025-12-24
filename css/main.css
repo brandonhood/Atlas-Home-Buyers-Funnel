@@ -1739,3 +1739,47 @@ body.offer-questionnaire .hero-landing .container {
 
 /* keep content above everything */
 .hero-inner{ z-index: 2; }
+
+
+:root{
+  --atlas-red:#990000;
+  --atlas-red-dark:#7a0000;
+  --atlas-red-border:#b30000;
+  --atlas-text:#333;
+}
+
+:root{
+  --brand: var(--atlas-red);
+  --brandDark: var(--atlas-red-dark);
+  --text: var(--atlas-text);
+  --muted:#6c757d;
+  --line:#dee2e6;
+  --shadow:0 12px 30px rgba(0,0,0,.08);
+  --radius:16px;
+}
+
+.hero,
+section.hero-landing{
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .background-image-container,
+section.hero-landing .background-image-container{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  opacity:.18;
+  pointer-events:none;
+}
+
+.hero .background-image-container img,
+section.hero-landing .background-image-container img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ensure content layers above */
+.hero-bg{ position:absolute; inset:0; z-index:1; }
+.hero-inner{ position:relative; z-index:2; }
