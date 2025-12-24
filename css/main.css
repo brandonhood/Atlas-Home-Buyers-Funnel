@@ -1600,161 +1600,124 @@ body.offer-questionnaire .hero-landing .container {
    Plays nice with Bootstrap + your global .btn overrides
    ========================= */
 
-.reasons {
-  /* Use your section padding conventions */
-  padding: 60px 0px;
-
-  /* Blue patterned background */
+.reasons{
+  padding: 60px 0;
   background:
     radial-gradient(circle at 20px 20px, rgba(255,255,255,.10) 2px, transparent 3px) 0 0/40px 40px,
     radial-gradient(circle at 20px 20px, rgba(255,255,255,.06) 10px, transparent 11px) 0 0/40px 40px,
     linear-gradient(180deg, #2f8fe6 0%, #2a7fdb 100%);
 }
+@media (min-width:768px){ .reasons{ padding: 80px 0; } }
+@media (min-width:992px){ .reasons{ padding: 120px 0; } }
 
-@media (min-width: 768px) {
-  .reasons { padding: 80px 0px; }
-}
-@media (min-width: 992px) {
-  .reasons { padding: 120px 0px; }
-}
-
-/* Card wrapper */
-.reasons .reasons-card {
-  border-radius: 12px; /* closer to your site’s 5–12px radius usage */
+.reasons .reasons-card{
+  border-radius: 12px;
   padding: 30px;
   background: rgba(0,0,0,.06);
   border: 1px solid rgba(255,255,255,.18);
-  box-shadow: 22px -5px 56px 0 rgba(19, 19, 19, 0.12);
+  box-shadow: 22px -5px 56px rgba(19,19,19,.12);
 }
 
-/* Layout */
-.reasons .reasons-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  align-items: center;
+.reasons .reasons-inner{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  align-items:center;
 }
 
-@media (min-width: 992px) {
-  .reasons .reasons-inner {
-    flex-direction: row;
-    align-items: center;
-  }
-  .reasons .reasons-media {
-    flex: 0 0 45%;
-    max-width: 45%;
-  }
-  .reasons .reasons-content {
-    flex: 0 0 55%;
-    max-width: 55%;
-  }
+@media (min-width:992px){
+  .reasons .reasons-inner{ flex-direction:row; align-items:center; }
+  .reasons .reasons-media{ flex:0 0 45%; max-width:45%; }
+  .reasons .reasons-content{ flex:0 0 55%; max-width:55%; }
 }
 
-/* Image frame */
-.reasons .reasons-media {
-  width: 100%;
-}
-.reasons .reasons-photo {
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
+.reasons .reasons-photo{
+  width:100%;
+  border-radius:10px;
+  overflow:hidden;
   background: rgba(255,255,255,.15);
   border: 1px solid rgba(255,255,255,.22);
 }
-.reasons .reasons-photo img {
-  width: 100%;
-  height: auto;
-  display: block;
+.reasons .reasons-photo img{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
-/* Typography */
 .reasons .reasons-content,
-.reasons .reasons-content * {
-  color: #fff;
+.reasons .reasons-content *{
+  color:#fff;
 }
 
-.reasons .reasons-title {
-  margin-bottom: 10px;
-  text-transform: none; /* override your global heading capitalization */
-  letter-spacing: 0;    /* override global heading letter-spacing */
-  line-height: 1.35;
+.reasons .reasons-title{
+  margin-bottom:10px;
+  text-transform:none;
+  letter-spacing:0;
+  line-height:1.35;
 }
 
-.reasons .reasons-text {
+.reasons .reasons-text{
   color: rgba(255,255,255,.92);
-  margin-bottom: 12px;
+  margin-bottom:12px;
 }
 
-.reasons .reasons-kicker {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  font-weight: 700;
-  text-transform: none;
-  color: #fff;
+.reasons .reasons-kicker{
+  margin:12px 0;
+  font-weight:700;
+  text-transform:none;
 }
 
-/* Checklist grid */
-.reasons .reasons-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  display: grid;
-  gap: 10px 18px;
+.reasons .reasons-list{
+  list-style:none;
+  padding-left:0;
+  margin:0;
+  display:grid;
+  gap:10px 18px;
+}
+@media (min-width:768px){
+  .reasons .reasons-list{ grid-template-columns:repeat(3,minmax(0,1fr)); }
 }
 
-@media (min-width: 768px) {
-  .reasons .reasons-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.reasons .reasons-item{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-weight:600;
+  font-size:.95rem;
 }
 
-.reasons .reasons-item {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.reasons .reasons-check {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 22px;
-  margin-top: 2px;
+.reasons .reasons-check{
+  width:22px;height:22px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 22px;
+  margin-top:2px;
   background: rgba(255,255,255,.18);
   border: 1px solid rgba(255,255,255,.30);
-  font-weight: 800;
+  font-weight:800;
 }
 
-/* CTA button
-   IMPORTANT: do NOT use .btn here because your global CSS forces .btn to Atlas red.
-*/
-.reasons .reasons-btn {
-  display: inline-block;
-  width: auto;
-  margin: 18px 0 0;
-  border-radius: 5px;
-  padding: 18px 26px;
-  font-size: 1.05rem;
-  line-height: 1;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-decoration: none;
+/* CTA: NOT .btn (your global .btn is forced red) */
+.reasons .reasons-btn{
+  display:inline-block;
+  margin-top:18px;
+  border-radius:5px;
+  padding:18px 26px;
+  font-size:1.05rem;
+  line-height:1;
+  text-transform:uppercase;
+  font-weight:700;
+  text-decoration:none;
 
-  background: #f59e0b !important;
-  border: 1px solid #f59e0b !important;
-  color: #0b1220 !important;
-
-  transition: background-color .3s ease, border-color .3s ease;
+  background:#f59e0b !important;
+  border:1px solid #f59e0b !important;
+  color:#0b1220 !important;
 }
-
 .reasons .reasons-btn:hover,
-.reasons .reasons-btn:focus {
-  background: #fbbf24 !important;
-  border-color: #fbbf24 !important;
-  color: #0b1220 !important;
+.reasons .reasons-btn:focus{
+  background:#fbbf24 !important;
+  border-color:#fbbf24 !important;
+  color:#0b1220 !important;
 }
