@@ -123,7 +123,7 @@
       border-color:rgba(153,0,0,.55);
     }
 
-    /* HERO (centered, address-only form) */
+    /* HERO */
     .hero{
       padding-top:86px; /* header space */
       position:relative;
@@ -178,7 +178,6 @@
       color:var(--muted);
       font-size:16px;
     }
-
     .hero-bullets{
       list-style:none;
       padding:0;
@@ -196,6 +195,7 @@
       font-weight:600;
     }
 
+    /* address-only module */
     .hero-offer{
       margin:10px auto 10px;
       max-width:760px;
@@ -228,6 +228,7 @@
       color:var(--muted);
       font-size:13px;
     }
+
     .sr-only{
       position:absolute;
       width:1px;height:1px;
@@ -237,6 +238,7 @@
       white-space:nowrap;
       border:0;
     }
+
     @media (max-width: 640px){
       .hero-inner{padding:34px 0 26px}
       .hero h1{font-size:30px}
@@ -259,7 +261,7 @@
       text-align:center;
     }
 
-    /* Generic Card */
+    /* Card */
     .card{
       background:#fff;
       border:1px solid var(--line);
@@ -267,22 +269,6 @@
       box-shadow:var(--shadow);
       padding:18px;
     }
-
-    /* Process cards */
-    .cards{
-      display:grid;
-      gap:14px;
-    }
-    @media (min-width: 900px){
-      .cards.three{grid-template-columns:repeat(3,1fr)}
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-size:16px;
-      letter-spacing:-.01em;
-    }
-    .card p{margin:0;color:var(--text); font-size:14px}
-    .card p br{line-height:1.8}
 
     /* Seen In */
     .seen{
@@ -316,19 +302,34 @@
       border-radius:12px;
       border:1px solid rgba(229,231,235,.8);
       background:#fff;
-      height:54px; /* consistent box height */
+      height:54px;
     }
     .logo-item img{
       height:34px;
       width:auto;
       max-width:140px;
       object-fit:contain;
-      image-rendering:auto;
     }
     @media (min-width: 768px){
       .logo-item{height:60px}
       .logo-item img{height:38px; max-width:160px}
     }
+
+    /* Process cards */
+    .cards{
+      display:grid;
+      gap:14px;
+    }
+    @media (min-width: 900px){
+      .cards.three{grid-template-columns:repeat(3,1fr)}
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:-.01em;
+    }
+    .card p{margin:0;color:var(--text); font-size:14px}
+    .card p br{line-height:1.8}
 
     /* Full Form section */
     .form-wrap{
@@ -443,7 +444,7 @@
 
     /* Footer */
     footer{
-      padding:28px 0 88px; /* extra for sticky CTA */
+      padding:28px 0 88px;
       color:var(--muted);
       font-size:12px;
     }
@@ -514,12 +515,12 @@
             <li>Close on <strong>your timeline</strong> — fast or flexible.</li>
           </ul>
 
-          <!-- Address-only CTA (like iBuySD) -->
-          <form class="hero-offer" action="#form" method="get">
+          <!-- Address-only CTA (no submit / no reload / no query params) -->
+          <div class="hero-offer" role="group" aria-label="Get cash offer by address">
             <label class="sr-only" for="heroAddress">Property address</label>
-            <input id="heroAddress" name="address" type="text" placeholder="Enter your home address" autocomplete="street-address" required>
-            <button class="btn" type="submit">Get My Cash Offer</button>
-          </form>
+            <input id="heroAddress" name="address" type="text" placeholder="Enter your home address" autocomplete="street-address" />
+            <button id="heroCtaBtn" class="btn" type="button">Get My Cash Offer</button>
+          </div>
 
           <div class="hero-micro">No obligation. No commissions. We cover closing costs.</div>
         </div>
@@ -587,14 +588,13 @@
     </div>
   </section>
 
-  <!-- FULL CONSULTATION FORM (kept for lead quality) -->
+  <!-- FULL CONSULTATION FORM -->
   <section aria-label="Consultation Form">
     <div class="container">
       <div id="form" class="form-wrap card" aria-label="Consultation form">
         <p class="form-title"><strong>Let’s Talk About Your Options</strong></p>
         <p class="form-sub">Share a few details and we’ll walk you through what makes sense for your situation.</p>
 
-        <!-- Replace action with your endpoint OR swap this entire <form> with your GHL embed -->
         <form action="#" method="post">
           <label for="address">Property Address (required)</label>
           <input id="address" name="address" type="text" placeholder="123 Main St, Jacksonville, FL" autocomplete="street-address" required />
@@ -719,7 +719,7 @@
   </div>
 
   <script>
-    // Smooth scroll
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
         const id = a.getAttribute('href');
@@ -731,17 +731,33 @@
       });
     });
 
-    // Pass hero address into the full form address field
-    (function syncAddress(){
-      const params = new URLSearchParams(window.location.search);
-      const addr = params.get('address');
-      if (!addr) return;
-      const addressInput = document.getElementById('address');
-      if (addressInput) addressInput.value = addr;
+    // Hero CTA: copy address into form + scroll to form
+    (function heroAddressFlow(){
+      const heroInput = document.getElementById('heroAddress');
+      const heroBtn = document.getElementById('heroCtaBtn');
+      const formAddress = document.getElementById('address');
+      const formWrap = document.getElementById('form');
 
-      // If the URL includes an address, jump to the form (nice UX)
-      const formEl = document.getElementById('form');
-      if (formEl) formEl.scrollIntoView({ behavior:'smooth', block:'start' });
+      if (!heroBtn || !heroInput || !formAddress || !formWrap) return;
+
+      function goToForm(){
+        const val = (heroInput.value || '').trim();
+        if (val) formAddress.value = val;
+        formWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Optional: focus next field for speed
+        setTimeout(() => {
+          const name = document.getElementById('name');
+          if (name) name.focus({ preventScroll:true });
+        }, 350);
+      }
+
+      heroBtn.addEventListener('click', goToForm);
+      heroInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          goToForm();
+        }
+      });
     })();
   </script>
 
