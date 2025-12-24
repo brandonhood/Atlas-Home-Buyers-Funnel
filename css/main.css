@@ -1599,13 +1599,15 @@ body.offer-questionnaire .hero-landing .container {
    Scope: body.offer-questionnaire
    ========================================================= */
 
-/* ---------- Brand tokens (optional, but helpful) ---------- */
-:root {
-  --atlas-red: #990000;
-  --atlas-red-dark: #7a0000;
-  --atlas-red-border: #cc0000;
-  --atlas-text: #333;
-  --atlas-bg-light: #f4f7fb;
+/* Bridge variables so the Reasons module works with your current theme */
+:root{
+  --brand: var(--atlas-red);
+  --brandDark: var(--atlas-red-dark);
+  --text: var(--atlas-text);
+  --muted: #6c757d;         /* bootstrap-ish muted */
+  --line: #dee2e6;          /* bootstrap border */
+  --shadow: 0 12px 30px rgba(0,0,0,.08);
+  --radius: 16px;
 }
 
 /* ---------- Page-level typography / base ---------- */
