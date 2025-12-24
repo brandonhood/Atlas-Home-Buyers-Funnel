@@ -1594,130 +1594,257 @@ body.offer-questionnaire .hero-landing .container {
   }
 }
 
-/* =========================
+/* =========================================================
+   Atlas Home Buyers - Funnel Overrides (Paste AFTER Bootstrap)
+   Scope: body.offer-questionnaire
+   ========================================================= */
+
+/* ---------- Brand tokens (optional, but helpful) ---------- */
+:root {
+  --atlas-red: #990000;
+  --atlas-red-dark: #7a0000;
+  --atlas-red-border: #cc0000;
+  --atlas-text: #333;
+  --atlas-bg-light: #f4f7fb;
+}
+
+/* ---------- Page-level typography / base ---------- */
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-weight: 400;
+  color: var(--atlas-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Button system (scoped; no accidental teal hovers) ---------- */
+body.offer-questionnaire button,
+body.offer-questionnaire .btn,
+body.offer-questionnaire input[type="submit"],
+body.offer-questionnaire input[type="button"],
+body.offer-questionnaire .gform_button,
+body.offer-questionnaire .submit-button {
+  background-color: var(--atlas-red) !important;
+  border: 1px solid var(--atlas-red-border) !important;
+  color: #fff !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+body.offer-questionnaire button:hover,
+body.offer-questionnaire .btn:hover,
+body.offer-questionnaire input[type="submit"]:hover,
+body.offer-questionnaire input[type="button"]:hover,
+body.offer-questionnaire .gform_button:hover,
+body.offer-questionnaire .submit-button:hover {
+  background-color: var(--atlas-red-dark) !important;
+  border-color: var(--atlas-red-dark) !important;
+  color: #fff !important;
+}
+
+body.offer-questionnaire button:focus,
+body.offer-questionnaire .btn:focus,
+body.offer-questionnaire input[type="submit"]:focus,
+body.offer-questionnaire input[type="button"]:focus,
+body.offer-questionnaire .gform_button:focus,
+body.offer-questionnaire .submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(153, 0, 0, 0.35) !important;
+}
+
+/* If you still use .btn-primary anywhere, keep it consistent */
+body.offer-questionnaire .btn-primary {
+  background-color: var(--atlas-red) !important;
+  border-color: #b30000 !important;
+  color: #fff !important;
+}
+body.offer-questionnaire .btn-primary:hover,
+body.offer-questionnaire .btn-primary:focus {
+  background-color: var(--atlas-red-dark) !important;
+  border-color: var(--atlas-red-dark) !important;
+}
+
+/* ---------- Questionnaire spacing helpers ---------- */
+.offer-questionnaire .single-column,
+.offer-questionnaire .two-column {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.offer-questionnaire .single-column + .two-column {
+  padding-top: 0;
+}
+
+/* ---------- Popup form container tweaks ---------- */
+#popup-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+  background: rgba(255, 255, 255, 0.95);
+  overflow-y: auto;
+}
+
+#popup-form-container .form-container {
+  overflow: visible;
+  padding-bottom: 4rem; /* give shadows room */
+}
+
+/* ---------- Hero container padding (mobile-first) ---------- */
+body.offer-questionnaire .hero-landing .container {
+  position: relative;
+  z-index: 1;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (max-width: 767.98px) {
+  body.offer-questionnaire .hero-landing .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  body.offer-questionnaire .hero-landing .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* =========================================================
    Reasons Section (SellEasy-style)
    Namespace: .reasons
-   Plays nice with Bootstrap + your global .btn overrides
-   ========================= */
+   ========================================================= */
 
-.reasons{
+.reasons {
   padding: 60px 0;
   background:
-    radial-gradient(circle at 20px 20px, rgba(255,255,255,.10) 2px, transparent 3px) 0 0/40px 40px,
-    radial-gradient(circle at 20px 20px, rgba(255,255,255,.06) 10px, transparent 11px) 0 0/40px 40px,
+    radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.10) 2px, transparent 3px) 0 0/40px 40px,
+    radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.06) 10px, transparent 11px) 0 0/40px 40px,
     linear-gradient(180deg, #2f8fe6 0%, #2a7fdb 100%);
 }
-@media (min-width:768px){ .reasons{ padding: 80px 0; } }
-@media (min-width:992px){ .reasons{ padding: 120px 0; } }
 
-.reasons .reasons-card{
+@media (min-width: 768px) { .reasons { padding: 80px 0; } }
+@media (min-width: 992px) { .reasons { padding: 120px 0; } }
+
+.reasons .reasons-card {
   border-radius: 12px;
   padding: 30px;
-  background: rgba(0,0,0,.06);
-  border: 1px solid rgba(255,255,255,.18);
-  box-shadow: 22px -5px 56px rgba(19,19,19,.12);
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 22px -5px 56px rgba(19, 19, 19, 0.12);
 }
 
-.reasons .reasons-inner{
-  display:flex;
-  flex-direction:column;
-  gap:24px;
-  align-items:center;
+.reasons .reasons-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
 }
 
-@media (min-width:992px){
-  .reasons .reasons-inner{ flex-direction:row; align-items:center; }
-  .reasons .reasons-media{ flex:0 0 45%; max-width:45%; }
-  .reasons .reasons-content{ flex:0 0 55%; max-width:55%; }
+@media (min-width: 992px) {
+  .reasons .reasons-inner { flex-direction: row; align-items: center; }
+  .reasons .reasons-media { flex: 0 0 45%; max-width: 45%; }
+  .reasons .reasons-content { flex: 0 0 55%; max-width: 55%; }
 }
 
-.reasons .reasons-photo{
-  width:100%;
-  border-radius:10px;
-  overflow:hidden;
-  background: rgba(255,255,255,.15);
-  border: 1px solid rgba(255,255,255,.22);
+.reasons .reasons-photo {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
-.reasons .reasons-photo img{
-  width:100%;
-  height:auto;
-  display:block;
+
+.reasons .reasons-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .reasons .reasons-content,
-.reasons .reasons-content *{
-  color:#fff;
+.reasons .reasons-content * {
+  color: #fff;
 }
 
-.reasons .reasons-title{
-  margin-bottom:10px;
-  text-transform:none;
-  letter-spacing:0;
-  line-height:1.35;
+.reasons .reasons-title {
+  margin-bottom: 10px;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.35;
 }
 
-.reasons .reasons-text{
-  color: rgba(255,255,255,.92);
-  margin-bottom:12px;
+.reasons .reasons-text {
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 12px;
 }
 
-.reasons .reasons-kicker{
-  margin:12px 0;
-  font-weight:700;
-  text-transform:none;
+.reasons .reasons-kicker {
+  margin: 12px 0;
+  font-weight: 700;
+  text-transform: none;
 }
 
-.reasons .reasons-list{
-  list-style:none;
-  padding-left:0;
-  margin:0;
-  display:grid;
-  gap:10px 18px;
-}
-@media (min-width:768px){
-  .reasons .reasons-list{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+.reasons .reasons-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px 18px;
 }
 
-.reasons .reasons-item{
-  display:flex;
-  gap:10px;
-  align-items:flex-start;
-  font-weight:600;
-  font-size:.95rem;
+@media (min-width: 768px) {
+  .reasons .reasons-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
-.reasons .reasons-check{
-  width:22px;height:22px;
-  border-radius:50%;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  flex:0 0 22px;
-  margin-top:2px;
-  background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.30);
-  font-weight:800;
+.reasons .reasons-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
-/* CTA: NOT .btn (your global .btn is forced red) */
-.reasons .reasons-btn{
-  display:inline-block;
-  margin-top:18px;
-  border-radius:5px;
-  padding:18px 26px;
-  font-size:1.05rem;
-  line-height:1;
-  text-transform:uppercase;
-  font-weight:700;
-  text-decoration:none;
-
-  background:#f59e0b !important;
-  border:1px solid #f59e0b !important;
-  color:#0b1220 !important;
+.reasons .reasons-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 22px;
+  margin-top: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  font-weight: 800;
 }
+
+/* CTA: intentionally NOT .btn (so it stays amber even with red button system) */
+.reasons .reasons-btn {
+  display: inline-block;
+  margin-top: 18px;
+  border-radius: 5px;
+  padding: 18px 26px;
+  font-size: 1.05rem;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+
+  background: #f59e0b !important;
+  border: 1px solid #f59e0b !important;
+  color: #0b1220 !important;
+}
+
 .reasons .reasons-btn:hover,
-.reasons .reasons-btn:focus{
-  background:#fbbf24 !important;
-  border-color:#fbbf24 !important;
-  color:#0b1220 !important;
+.reasons .reasons-btn:focus {
+  background: #fbbf24 !important;
+  border-color: #fbbf24 !important;
+  color: #0b1220 !important;
 }
