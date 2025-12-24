@@ -1,278 +1,420 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Get a Cash Offer | Atlas Home Buyers</title>
-  <meta name="description" content="Get a no-obligation cash offer. Sell as-is with a simple, flexible closing timeline." />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Sell Your House Fast Jacksonville | Atlas Home Buyers</title>
+  <meta name="description" content="Need to sell your house fast in Jacksonville without repairs or fees? Get a fair cash offer and close on your timeline." />
+
+  <!-- Optional: replace with your favicon -->
+  <link rel="icon" type="image/png" href="images/Atlas Favicon.png" />
+
+  <!-- Optional font (can remove for max speed) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
+      --brand:#990000;
+      --brandDark:#7a0000;
+      --text:#1f2937;
+      --muted:#6b7280;
       --bg:#ffffff;
-      --text:#1b1f24;
-      --muted:#5b6572;
-      --line:#e6e9ee;
-      --soft:#f6f7f9;
-      --brand:#990000;         /* Atlas red */
-      --brand-dark:#7a0000;
-      --shadow: 0 10px 30px rgba(16,24,40,.10);
-      --radius: 16px;
-      --max: 1100px;
+      --panel:#f7f7f8;
+      --line:#e5e7eb;
+      --shadow:0 12px 30px rgba(0,0,0,.08);
+      --radius:16px;
+      --max:1100px;
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html,body{margin:0;padding:0}
     body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:var(--bg);
       line-height:1.5;
     }
-    a{color:inherit}
-    img{max-width:100%; display:block}
 
-    .container{max-width:var(--max); margin:0 auto; padding:0 16px}
-    .row{display:grid; gap:18px}
-    @media(min-width: 920px){
-      .row.two{grid-template-columns: 1.1fr .9fr; align-items:start; gap:28px}
+    a{color:inherit}
+    img{max-width:100%;height:auto;display:block}
+
+    .container{
+      width:100%;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 18px;
     }
 
     /* Header */
-    .topbar{
-      position:sticky; top:0; z-index:50;
+    .header{
+      position:fixed;
+      top:0; left:0; right:0;
       background:rgba(255,255,255,.92);
-      backdrop-filter: blur(8px);
-      border-bottom:1px solid var(--line);
+      backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid rgba(229,231,235,.7);
+      z-index:50;
     }
-    .topbar-inner{
-      display:flex; align-items:center; justify-content:space-between;
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
       padding:12px 0;
     }
     .brand{
-      display:flex; align-items:center; gap:10px; text-decoration:none;
-      font-weight:700; letter-spacing:.2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.3px;
     }
-    .brand-badge{
-      width:34px;height:34px;border-radius:10px;
-      background:var(--brand); display:grid; place-items:center;
-      color:#fff; font-size:14px;
-    }
+    .brand img{height:34px;width:auto}
     .call{
-      display:flex; align-items:center; gap:10px; text-decoration:none;
-      padding:10px 12px; border:1px solid var(--line); border-radius:999px;
-      background:#fff;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      font-weight:800;
     }
-    .call strong{font-size:14px}
-    .call small{display:block; font-size:12px; color:var(--muted)}
-    .phone-icon{
-      width:34px;height:34px;border-radius:999px;
-      background:var(--soft); display:grid; place-items:center;
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
+      border-radius:999px;
       border:1px solid var(--line);
+      background:#fff;
+      font-size:14px;
+    }
+    .call strong{display:none}
+    @media (min-width: 768px){
+      .call strong{display:inline}
     }
 
     /* Hero */
     .hero{
-      padding:26px 0 18px;
-      background:
-        radial-gradient(1200px 500px at 50% -10%, rgba(153,0,0,.10), transparent 60%),
-        linear-gradient(#fff, #fff);
-    }
-    .hero-card{
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      padding-top:86px; /* header space */
+      position:relative;
       overflow:hidden;
-      background:#fff;
+      background:#fafafa;
+      border-bottom:1px solid var(--line);
     }
-    .hero-grid{display:grid}
-    @media(min-width: 920px){
-      .hero-grid{grid-template-columns: 1.05fr .95fr}
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(153,0,0,.08), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(153,0,0,.06), transparent 55%);
+      pointer-events:none;
     }
-    .hero-left{padding:18px 18px 8px}
-    @media(min-width: 920px){ .hero-left{padding:28px 28px 18px} }
+    .hero-inner{
+      position:relative;
+      padding:34px 0 34px;
+      display:grid;
+      gap:18px;
+    }
+    @media (min-width: 992px){
+      .hero-inner{
+        grid-template-columns: 1.05fr .95fr;
+        align-items:start;
+        gap:22px;
+        padding:44px 0 44px;
+      }
+    }
 
     .eyebrow{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:6px 10px; border-radius:999px;
-      background:rgba(153,0,0,.08); color:var(--brand);
-      border:1px solid rgba(153,0,0,.16);
-      font-size:12px; font-weight:600;
+      display:inline-block;
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--brand);
+      background:rgba(153,0,0,.08);
+      border:1px solid rgba(153,0,0,.18);
+      padding:8px 10px;
+      border-radius:999px;
+      margin-bottom:12px;
     }
     h1{
-      margin:12px 0 10px;
-      font-size:28px;
+      margin:0 0 10px;
+      font-size:30px;
       line-height:1.15;
-      letter-spacing:-.3px;
+      letter-spacing:-.02em;
     }
-    @media(min-width: 920px){ h1{font-size:40px} }
-    .subhead{color:var(--muted); font-size:15px; margin:0 0 14px}
-    .bullets{display:grid; gap:10px; margin:16px 0 0; padding:0; list-style:none}
-    .bullets li{display:flex; gap:10px; align-items:flex-start; color:var(--text)}
+    @media (min-width: 768px){
+      h1{font-size:40px}
+    }
+    .subhead{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    @media (min-width: 768px){
+      .subhead{font-size:16px}
+    }
+
+    .bullets{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .bullets li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:10px 12px;
+      box-shadow:0 1px 0 rgba(0,0,0,.02);
+    }
     .check{
-      width:22px;height:22px;border-radius:999px;
-      display:grid; place-items:center;
-      background:rgba(1,197,140,.12);
-      border:1px solid rgba(1,197,140,.25);
-      flex:0 0 auto;
-      margin-top:2px;
-    }
-    .check svg{width:14px;height:14px}
-
-    .hero-right{
-      border-top:1px solid var(--line);
-      background:linear-gradient(180deg, #fff, #fbfbfc);
-      padding:16px;
-    }
-    @media(min-width: 920px){
-      .hero-right{border-top:none; border-left:1px solid var(--line); padding:22px}
+      width:22px; height:22px;
+      border-radius:999px;
+      background:rgba(153,0,0,.12);
+      border:1px solid rgba(153,0,0,.22);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 22px;
+      margin-top:1px;
+      color:var(--brand);
+      font-weight:900;
+      font-size:14px;
     }
 
-    .form-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius: 14px;
-      box-shadow: 0 12px 24px rgba(16,24,40,.06);
-      padding:14px;
-    }
-    .form-title{margin:0 0 10px; font-size:16px}
-    .grid2{display:grid; gap:10px}
-    @media(min-width:520px){ .grid2{grid-template-columns: 1fr 1fr} }
-
-    label{font-size:12px; color:var(--muted); display:block; margin:0 0 6px}
-    input, select, textarea{
-      width:100%;
-      padding:12px 12px;
-      border:1px solid var(--line);
-      border-radius: 12px;
-      font:inherit;
-      background:#fff;
-      outline:none;
-    }
-    input:focus, select:focus, textarea:focus{
-      border-color: rgba(153,0,0,.45);
-      box-shadow: 0 0 0 4px rgba(153,0,0,.10);
-    }
-    textarea{min-height:90px; resize:vertical}
-
+    /* CTA button */
     .btn{
+      display:inline-flex;
       width:100%;
-      margin-top:10px;
-      padding:14px 14px;
-      border-radius: 14px;
+      align-items:center;
+      justify-content:center;
+      padding:14px 16px;
+      border-radius:999px;
       border:1px solid var(--brand);
       background:var(--brand);
       color:#fff;
-      font-weight:800;
-      letter-spacing:.6px;
+      text-decoration:none;
+      font-weight:900;
       text-transform:uppercase;
+      letter-spacing:.06em;
       cursor:pointer;
-      transition: background .18s ease, transform .06s ease;
+      transition:background .2s ease, border-color .2s ease, transform .05s ease;
     }
-    .btn:hover{background:var(--brand-dark)}
-    .btn:active{transform: translateY(1px)}
-    .privacy{
-      display:flex; gap:8px; align-items:flex-start;
+    .btn:hover{background:var(--brandDark); border-color:var(--brandDark)}
+    .btn:active{transform:translateY(1px)}
+    .btn.secondary{
+      background:#fff;
+      color:var(--brand);
+      border-color:rgba(153,0,0,.35);
+    }
+    .btn.secondary:hover{
+      background:rgba(153,0,0,.06);
+      border-color:rgba(153,0,0,.55);
+    }
+
+    .hero-cta-wrap{margin-top:16px}
+    .micro{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:left;
+    }
+
+    /* Form */
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    .form-title{
+      margin:0 0 6px;
+      font-weight:900;
+      font-size:18px;
+    }
+    .form-sub{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    label{
+      display:block;
+      font-weight:700;
+      font-size:12px;
+      letter-spacing:.02em;
+      margin:12px 0 6px;
+    }
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:var(--panel);
+      font-size:14px;
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color:rgba(153,0,0,.45);
+      box-shadow:0 0 0 3px rgba(153,0,0,.10);
+      background:#fff;
+    }
+    .grid-2{
+      display:grid;
+      gap:12px;
+    }
+    @media (min-width: 560px){
+      .grid-2{grid-template-columns:1fr 1fr}
+    }
+    .fineprint{
+      margin-top:10px;
+      font-size:12px;
+      color:var(--muted);
+      display:flex;
+      gap:8px;
+      align-items:flex-start;
+    }
+    .fineprint strong{color:var(--text)}
+    .consent{
+      margin-top:10px;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.35;
+    }
+    .under-submit{
       margin-top:10px;
       color:var(--muted);
       font-size:12px;
-      justify-content:center;
       text-align:center;
-    }
-    .privacy svg{width:16px;height:16px; margin-top:2px; flex:0 0 auto}
-
-    /* Seen in */
-    .band{
-      padding:18px 0;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      background:#fff;
-    }
-    .band h2{
-      font-size:14px;
-      margin:0 0 14px;
-      text-transform:uppercase;
-      letter-spacing:1.2px;
-      color:var(--muted);
-      text-align:center;
-    }
-    .logos{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:14px;
-      align-items:center;
-      justify-items:center;
-    }
-    @media(min-width: 560px){
-      .logos{grid-template-columns: repeat(5, minmax(0,1fr));}
-    }
-    .logo-box{
-      width:100%;
-      max-width:180px;
-      height:54px;                /* consistent sizing */
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:8px;
-      border-radius:12px;
-      background:var(--soft);
-      border:1px solid var(--line);
-    }
-    .logo-box img{
-      max-height:34px;            /* keeps them visually uniform */
-      width:auto;
-      max-width:100%;
-      object-fit:contain;
     }
 
     /* Sections */
-    section{padding:34px 0}
+    section{padding:44px 0}
     .section-title{
       margin:0 0 8px;
-      font-size:22px;
-      letter-spacing:-.2px;
+      font-size:24px;
+      letter-spacing:-.02em;
       text-align:center;
     }
-    .section-sub{margin:0 0 20px; color:var(--muted); text-align:center}
-
-    .cards{display:grid; gap:14px}
-    @media(min-width: 920px){ .cards.three{grid-template-columns: repeat(3,1fr)} }
-    .card{
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      background:#fff;
-      box-shadow: 0 10px 24px rgba(16,24,40,.05);
-      padding:16px;
+    .section-sub{
+      margin:0 auto 22px;
+      max-width:720px;
+      color:var(--muted);
+      text-align:center;
     }
-    .card h3{margin:0 0 6px; font-size:16px}
-    .card p{margin:0; color:var(--muted); font-size:14px}
 
-    /* Compare */
-    .compare{display:grid; gap:14px}
-    @media(min-width: 920px){ .compare{grid-template-columns: 1fr 1fr} }
-    .compare h3{margin:0 0 10px}
-    .compare ul{margin:0; padding-left:18px; color:var(--muted)}
-    .compare li{margin:8px 0}
+    /* Process cards */
+    .cards{
+      display:grid;
+      gap:14px;
+    }
+    @media (min-width: 900px){
+      .cards.three{grid-template-columns:repeat(3,1fr)}
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:-.01em;
+    }
+    .card p{margin:0;color:var(--text)}
+    .card p{font-size:14px}
+    .card p br{line-height:1.8}
+
+    /* Seen In */
+    .seen{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:#fff;
+      padding:28px 0;
+    }
+    .seen h5{
+      margin:0 0 14px;
+      text-align:center;
+      font-size:14px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-weight:900;
+    }
+
+    /* Make logos consistent height + aligned */
+    .logo-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px 18px;
+      justify-content:center;
+      align-items:center;
+    }
+    .logo-item{
+      flex:0 1 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid rgba(229,231,235,.8);
+      background:#fff;
+    }
+    .logo-item img{
+      height:34px;
+      width:auto;
+      max-width:140px;
+      object-fit:contain;
+      image-rendering:auto;
+    }
+    /* Force Benzinga/ABC alignment: give every item a consistent box height */
+    .logo-item{height:54px}
+    @media (min-width: 768px){
+      .logo-item img{height:38px; max-width:160px}
+      .logo-item{height:60px}
+    }
 
     /* Testimonials */
-    .quote{font-size:14px; color:var(--muted)}
-    .who{margin-top:10px; font-weight:700; font-size:14px}
-    .stars{display:flex; gap:4px; margin-bottom:8px}
-    .stars svg{width:16px;height:16px}
+    .testimonials{
+      background:#fafafa;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .quote{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px;
+      box-shadow:0 10px 24px rgba(0,0,0,.06);
+    }
+    .quote p{margin:0 0 10px}
+    .quote strong{display:block; font-size:13px}
+
+    .two-col{
+      display:grid;
+      gap:14px;
+    }
+    @media (min-width: 900px){
+      .two-col{grid-template-columns:1fr 1fr}
+    }
 
     /* FAQ */
-    .faq{max-width:860px; margin:0 auto}
+    .faq{
+      max-width:860px;
+      margin:0 auto;
+    }
     details{
       border:1px solid var(--line);
-      border-radius: 14px;
-      padding:12px 14px;
+      border-radius:14px;
       background:#fff;
-      box-shadow: 0 10px 20px rgba(16,24,40,.04);
+      padding:14px 14px;
+      margin-bottom:12px;
     }
-    details + details{margin-top:10px}
     summary{
       cursor:pointer;
-      font-weight:700;
+      font-weight:900;
       list-style:none;
     }
     summary::-webkit-details-marker{display:none}
@@ -280,406 +422,289 @@
 
     /* Footer */
     footer{
-      padding:28px 0;
-      border-top:1px solid var(--line);
-      background:#0f1216;
-      color:#d7dde6;
+      padding:28px 0 88px; /* extra for sticky CTA */
+      color:var(--muted);
+      font-size:12px;
     }
-    footer a{color:#d7dde6}
-    .foot-grid{display:grid; gap:14px}
-    @media(min-width: 920px){ .foot-grid{grid-template-columns: 1.2fr .8fr} }
-    .fineprint{font-size:12px; color:#a9b4c2; line-height:1.6}
+    footer a{color:var(--muted)}
+    .footer-grid{
+      display:grid;
+      gap:12px;
+    }
+    @media (min-width: 900px){
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
 
     /* Sticky mobile CTA */
-    .sticky{
-      position:fixed; left:0; right:0; bottom:0;
-      padding:10px 12px;
-      background:rgba(255,255,255,.94);
-      border-top:1px solid var(--line);
-      backdrop-filter: blur(8px);
+    .sticky-cta{
+      position:fixed;
+      left:0; right:0; bottom:0;
       z-index:60;
-      display:block;
+      padding:10px 12px;
+      background:rgba(255,255,255,.92);
+      border-top:1px solid rgba(229,231,235,.9);
+      backdrop-filter:saturate(180%) blur(10px);
     }
-    .sticky .container{display:flex; gap:10px; align-items:center; justify-content:space-between}
-    .sticky a{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 14px;
-      border-radius: 999px;
-      border:1px solid var(--brand);
-      background:var(--brand);
-      color:#fff;
-      text-decoration:none;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.6px;
-      flex:1;
+    .sticky-cta .btn{
+      height:52px;
+      font-size:14px;
     }
-    @media(min-width: 920px){ .sticky{display:none} }
+    @media (min-width: 992px){
+      .sticky-cta{display:none}
+    }
   </style>
 </head>
 
 <body>
-  <!-- Sticky header -->
-  <div class="topbar">
+
+  <!-- Header -->
+  <header class="header">
     <div class="container">
-      <div class="topbar-inner">
-        <a class="brand" href="#" aria-label="Atlas Home Buyers">
-          <span class="brand-badge">A</span>
-          <span>Atlas Home Buyers</span>
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Atlas Home Buyers">
+          <!-- Replace with your logo -->
+          <img src="images/Atlas Logo.png" alt="Atlas Home Buyers" />
         </a>
 
-        <a class="call" href="tel:9049449419">
-          <span class="phone-icon" aria-hidden="true">☎</span>
-          <span>
-            <small>Call / Text</small>
-            <strong>(904) 944-9419</strong>
-          </span>
+        <a class="call pill" href="tel:9049449419" aria-label="Call Atlas Home Buyers">
+          📞 <strong>(904) 944-9419</strong>
         </a>
       </div>
     </div>
-  </div>
+  </header>
 
   <!-- Hero -->
-  <main class="hero">
+  <main id="top" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+
     <div class="container">
-      <div class="hero-card">
-        <div class="hero-grid">
-          <div class="hero-left">
-            <div class="eyebrow">Jacksonville • Local home buyer</div>
-            <h1>Get a Cash Offer for Your Jacksonville Home</h1>
-            <p class="subhead">
-              Sell as-is with a simple process and a closing timeline that works for you.
-              No commissions. No repairs required.
-            </p>
+      <div class="hero-inner">
 
-            <ul class="bullets">
-              <li>
-                <span class="check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span><strong>As-is purchase</strong> (skip clean-up and repairs)</span>
-              </li>
-              <li>
-                <span class="check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span><strong>No listing</strong> (no showings, no open houses)</span>
-              </li>
-              <li>
-                <span class="check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span><strong>Fast close available</strong> (or pick a later date)</span>
-              </li>
-            </ul>
-          </div>
+        <!-- Left: Copy -->
+        <div class="hero-left">
+          <span class="eyebrow">Jacksonville Cash Home Buyer</span>
 
-          <div class="hero-right" id="form">
-            <div class="form-card">
-              <p class="form-title"><strong>Get My Free Cash Offer</strong></p>
+          <h1>Need to Sell Your House Fast in Jacksonville – Without Repairs or Fees?</h1>
 
-              <!-- Replace action with your endpoint / GHL / webhook -->
-              <form id="leadForm" method="post" action="#">
-                <div class="grid2">
-                  <div>
-                    <label for="name">Full name</label>
-                    <input id="name" name="name" autocomplete="name" required />
-                  </div>
-                  <div>
-                    <label for="phone">Phone</label>
-                    <input id="phone" name="phone" inputmode="tel" autocomplete="tel" required />
-                  </div>
-                </div>
+          <p class="subhead">
+            Get a fair cash offer for your home – even if it needs repairs, was inherited, or you need to close on your timeline.
+          </p>
 
-                <div class="grid2">
-                  <div>
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="email" autocomplete="email" />
-                  </div>
-                  <div>
-                    <label for="timeline">Ideal timing</label>
-                    <select id="timeline" name="timeline" required>
-                      <option value="" selected disabled>Select…</option>
-                      <option>ASAP</option>
-                      <option>2–4 weeks</option>
-                      <option>1–2 months</option>
-                      <option>Just exploring</option>
-                    </select>
-                  </div>
-                </div>
+          <ul class="bullets">
+            <li><span class="check">✓</span><span>Sell <strong>as-is</strong> — no cleanup, no repairs.</span></li>
+            <li><span class="check">✓</span><span>No agents involved — <strong>no commissions</strong>.</span></li>
+            <li><span class="check">✓</span><span>Close on <strong>your timeline</strong> — fast or flexible.</span></li>
+          </ul>
 
-                <div>
-                  <label for="address">Property address</label>
-                  <input id="address" name="address" autocomplete="street-address" required />
-                </div>
-
-                <div class="grid2">
-                  <div>
-                    <label for="city">City</label>
-                    <input id="city" name="city" autocomplete="address-level2" />
-                  </div>
-                  <div>
-                    <label for="zip">Zip</label>
-                    <input id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" />
-                  </div>
-                </div>
-
-                <div>
-                  <label for="notes">Anything we should know?</label>
-                  <textarea id="notes" name="notes" placeholder="Optional: repairs needed, tenant situation, inherited, etc."></textarea>
-                </div>
-
-                <!-- Hidden attribution fields -->
-                <input type="hidden" name="utm_source" />
-                <input type="hidden" name="utm_medium" />
-                <input type="hidden" name="utm_campaign" />
-                <input type="hidden" name="utm_term" />
-                <input type="hidden" name="utm_content" />
-                <input type="hidden" name="gclid" />
-                <input type="hidden" name="fbclid" />
-
-                <button class="btn" type="submit">Get My Offer</button>
-
-                <div class="privacy" aria-live="polite">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M6 11h12v9H6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  <span>We respect your privacy and won’t share your info without consent.</span>
-                </div>
-              </form>
-            </div>
-
-            <p style="margin:12px 0 0; color:var(--muted); font-size:12px; text-align:center;">
-              By submitting, you agree to be contacted about your request (calls/texts may apply).
-            </p>
+          <div class="hero-cta-wrap">
+            <a class="btn secondary" href="#form">Get My Cash Offer</a>
+            <div class="micro">No obligation. No commissions. We cover closing costs.</div>
           </div>
         </div>
+
+        <!-- Right: Form -->
+        <div id="form" class="card" aria-label="Consultation form">
+          <p class="form-title"><strong>Let’s Talk About Your Options</strong></p>
+          <p class="form-sub">Share a few details and we’ll walk you through what makes sense for your situation.</p>
+
+          <!-- Replace action with your endpoint OR swap this entire <form> with your GoHighLevel iframe -->
+          <form action="#" method="post">
+            <label for="address">Property Address (required)</label>
+            <input id="address" name="address" type="text" placeholder="123 Main St, Jacksonville, FL" required />
+
+            <div class="grid-2">
+              <div>
+                <label for="name">Full Name (required)</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="phone">Phone (required)</label>
+                <input id="phone" name="phone" type="tel" placeholder="(904) 123-4567" required />
+              </div>
+            </div>
+
+            <label for="email">Email (optional)</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" />
+
+            <label for="timeline">Ideal Timing</label>
+            <select id="timeline" name="timeline">
+              <option value="" selected disabled>Choose one…</option>
+              <option>ASAP (7–14 days)</option>
+              <option>30 days</option>
+              <option>60–90 days</option>
+              <option>Not sure yet</option>
+            </select>
+
+            <button class="btn" type="submit">Schedule My Consultation</button>
+
+            <div class="under-submit">No obligation • No pressure • Local conversation</div>
+
+            <div class="fineprint" aria-label="privacy reassurance">
+              🔒 <span>Your information is kept private and never shared.</span>
+            </div>
+
+            <div class="consent">
+              By submitting, you agree to receive calls/texts regarding your request. Message &amp; data rates may apply. Reply STOP to unsubscribe.
+            </div>
+          </form>
+        </div>
+
       </div>
     </div>
   </main>
 
   <!-- Seen In -->
-  <div class="band">
+  <section class="seen" aria-label="As seen in">
     <div class="container">
-      <h2>As Seen In</h2>
+      <h5>As Seen In</h5>
 
-      <!-- Replace src with your SVGs -->
-      <div class="logos" aria-label="Media logos">
-        <div class="logo-box"><img src="images/Fox Logo.svg" alt="FOX" loading="lazy" /></div>
-        <div class="logo-box"><img src="images/NBC Logo.svg" alt="NBC" loading="lazy" /></div>
-        <div class="logo-box"><img src="images/CBS Logo.svg" alt="CBS" loading="lazy" /></div>
-        <div class="logo-box"><img src="images/ABC News Logo.svg" alt="ABC News" loading="lazy" /></div>
-        <div class="logo-box"><img src="images/Bezinga Logo.svg" alt="Benzinga" loading="lazy" /></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3 Steps -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Sell Your Home in 3 Simple Steps</h2>
-      <p class="section-sub">Clear process. No pressure. Your timeline.</p>
-
-      <div class="cards three">
-        <div class="card">
-          <h3>1) Tell us about the property</h3>
-          <p>Submit the form (or call/text). We’ll ask a few quick questions to understand your situation.</p>
-        </div>
-        <div class="card">
-          <h3>2) Receive a cash offer</h3>
-          <p>We evaluate condition, location, and repairs. You’ll get a clear offer with no obligation.</p>
-        </div>
-        <div class="card">
-          <h3>3) Choose your closing date</h3>
-          <p>Close fast if needed, or pick a date that fits. We’ll handle the details end-to-end.</p>
-        </div>
+      <div class="logo-grid">
+        <div class="logo-item"><img loading="lazy" src="images/Fox Logo.svg" alt="FOX"></div>
+        <div class="logo-item"><img loading="lazy" src="images/NBC Logo.svg" alt="NBC"></div>
+        <div class="logo-item"><img loading="lazy" src="images/CBS Logo.svg" alt="CBS"></div>
+        <div class="logo-item"><img loading="lazy" src="images/ABC News Logo.svg" alt="ABC"></div>
+        <div class="logo-item"><img loading="lazy" src="images/Bezinga Logo.svg" alt="Benzinga"></div>
       </div>
     </div>
   </section>
 
-  <!-- Benefits vs Traditional -->
-  <section style="background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <!-- Process -->
+  <section aria-label="Process">
     <div class="container">
-      <h2 class="section-title">A Faster Alternative to Listing</h2>
-      <p class="section-sub">Here’s the tradeoff most sellers care about.</p>
+      <h2 class="section-title">Our Process is Simple</h2>
+      <p class="section-sub">Sell Your House in 3 Easy Steps</p>
 
-      <div class="compare">
+      <div class="cards three">
         <div class="card">
-          <h3>Atlas Home Buyers</h3>
-          <ul>
-            <li>No listing required (no showings)</li>
-            <li>Sell as-is (skip repairs and clean-up)</li>
-            <li>Flexible closing date</li>
-            <li>Clear, straightforward process</li>
-          </ul>
+          <h3>1) Tell Us About Your Situation</h3>
+          <p>
+            • Property Address<br>
+            • Basic condition (any condition is fine)<br>
+            • Your ideal timing<br>
+            • This helps us understand how we can actually help.
+          </p>
         </div>
+
         <div class="card">
-          <h3>Traditional Sale</h3>
-          <ul>
-            <li>Showings, open houses, and scheduling</li>
-            <li>Repairs, staging, cleaning, and punch lists</li>
-            <li>Buyer financing risk + delays</li>
-            <li>Longer timeline and uncertainty</li>
-          </ul>
+          <h3>2) Have a Quick, No-Obligation Consultation</h3>
+          <p>
+            • No agents involved<br>
+            • No commissions<br>
+            • No repair requests<br>
+            • We’ll review your options, discuss your goals, and talk about possible next steps.
+          </p>
         </div>
+
+        <div class="card">
+          <h3>3) Close On Your Timeline</h3>
+          <p>
+            • Close in as little as 7–14 days – or later if you need more time.<br>
+            • You pick the closing date<br>
+            • We handle the paperwork<br>
+            • We cover closing costs<br>
+            • You are in control from start to finish.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA after 3 Steps -->
+      <div style="text-align:center; margin-top:18px;">
+        <a class="btn" href="#form">Schedule My Consultation</a>
+        <div style="margin-top:8px; color:var(--muted); font-size:12px;">No obligation • No pressure</div>
       </div>
     </div>
   </section>
 
-  <!-- Situations -->
-  <section>
+  <!-- Trust / Testimonials -->
+  <section class="testimonials" aria-label="Testimonials">
     <div class="container">
-      <h2 class="section-title">We Help in Common Seller Situations</h2>
-      <p class="section-sub">Placeholder list. Swap to match your highest-intent Google Ads traffic.</p>
+      <h2 class="section-title">What Local Sellers Say</h2>
+      <p class="section-sub">A few recent experiences from homeowners we’ve helped.</p>
 
-      <div class="cards three">
-        <div class="card"><h3>Repairs needed</h3><p>Outdated, damaged, or code issues—sell as-is.</p></div>
-        <div class="card"><h3>Inheritance / probate</h3><p>Need a clean, straightforward sale process.</p></div>
-        <div class="card"><h3>Financial pressure</h3><p>Late payments, liens, or urgent timelines.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section style="background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-    <div class="container">
-      <h2 class="section-title">What Sellers Say</h2>
-      <p class="section-sub">Use real reviews. Keep it short and believable.</p>
-
-      <div class="cards three">
-        <div class="card">
-          <div class="stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-          </div>
-          <div class="quote">“Super easy process. Clear communication and we closed on the date we needed.”</div>
-          <div class="who">— Seller Name</div>
+      <div class="two-col">
+        <div class="quote">
+          <p>“Fast, professional, and straightforward. Communication was excellent and the process was simple.”</p>
+          <strong>— Seller in Jacksonville</strong>
         </div>
-
-        <div class="card">
-          <div class="stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-          </div>
-          <div class="quote">“They handled the details and made it simple. No repairs, no showings.”</div>
-          <div class="who">— Seller Name</div>
-        </div>
-
-        <div class="card">
-          <div class="stars" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
-          </div>
-          <div class="quote">“Fast, professional, and transparent. Would recommend.”</div>
-          <div class="who">— Seller Name</div>
+        <div class="quote">
+          <p>“They explained our options clearly and didn’t pressure us. Closing was easy and on our timeline.”</p>
+          <strong>— Local homeowner</strong>
         </div>
       </div>
 
       <div style="text-align:center; margin-top:18px;">
-        <a href="#form" style="display:inline-block; padding:12px 16px; border-radius:999px; border:1px solid var(--brand); background:var(--brand); color:#fff; text-decoration:none; font-weight:800; text-transform:uppercase; letter-spacing:.6px;">
-          Get My Offer
-        </a>
+        <a class="btn" href="#form">Schedule My Consultation</a>
+        <div style="margin-top:8px; color:var(--muted); font-size:12px;">No obligation • No pressure • Local conversation</div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section>
+  <section aria-label="FAQ">
     <div class="container">
-      <h2 class="section-title">FAQ</h2>
-      <p class="section-sub">Short answers reduce friction for cold traffic.</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub">Quick answers for common questions before you schedule.</p>
 
       <div class="faq">
         <details>
+          <summary>Do I need to make repairs or clean the house?</summary>
+          <p>No. You can sell as-is. We’ll discuss your situation and what makes sense for your home.</p>
+        </details>
+
+        <details>
           <summary>How fast can you close?</summary>
-          <p>It depends on title and your situation. Some closings happen quickly, and others happen on a date you choose.</p>
+          <p>In many situations, closing can happen in as little as 7–14 days, or later if you need more time.</p>
         </details>
+
         <details>
-          <summary>Do I need to make repairs?</summary>
-          <p>No. We buy homes as-is. You can leave unwanted items behind if needed (case-by-case).</p>
+          <summary>Are there any commissions or fees?</summary>
+          <p>No commissions. We cover closing costs. We’ll walk through the details on the consultation.</p>
         </details>
+
         <details>
-          <summary>What fees do I pay?</summary>
-          <p>We’ll explain the numbers clearly. There’s no obligation and you can compare your options.</p>
-        </details>
-        <details>
-          <summary>How do you determine an offer?</summary>
-          <p>We look at condition, location, and needed repairs, plus holding costs and market activity.</p>
+          <summary>What if I’m not sure I’m ready to sell?</summary>
+          <p>That’s fine. The consultation is no-obligation. We’ll review your options and you can decide what to do next.</p>
         </details>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer aria-label="Footer">
     <div class="container">
-      <div class="foot-grid">
+      <div class="footer-grid">
         <div>
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-            <span class="brand-badge" style="background:#fff;color:#0f1216;">A</span>
-            <strong>Atlas Home Buyers</strong>
-          </div>
-          <div class="fineprint">
-            This website is for informational purposes only and does not constitute legal or financial advice.
-            Any timelines, savings, or outcomes depend on your unique situation and property.
+          <strong style="color:var(--text)">Atlas Home Buyers</strong><br />
+          Jacksonville, FL<br />
+          <a href="tel:9049449419">(904) 944-9419</a>
+        </div>
+        <div>
+          <div>
+            This site is for informational purposes only and does not constitute legal or financial advice.
+            All offers subject to verification and property review.
           </div>
         </div>
-
-        <div class="fineprint">
-          <strong>Contact</strong><br/>
-          Phone: <a href="tel:9049449419">(904) 944-9419</a><br/>
-          Service area: Jacksonville, FL & surrounding areas<br/>
-          <br/>
-          <strong>Privacy</strong><br/>
-          We do not sell your personal information.
-        </div>
-      </div>
-
-      <div class="fineprint" style="margin-top:14px; border-top:1px solid rgba(255,255,255,.12); padding-top:12px;">
-        © <span id="year"></span> Atlas Home Buyers. All rights reserved.
       </div>
     </div>
   </footer>
 
-  <!-- Sticky mobile CTA -->
-  <div class="sticky" role="region" aria-label="Quick action">
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta" role="region" aria-label="Sticky call to action">
     <div class="container">
-      <a href="#form">Get My Offer</a>
+      <a class="btn" href="#form">Schedule My Consultation</a>
     </div>
   </div>
 
   <script>
-    // Set year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Capture UTM + gclid/fbclid into hidden fields (Google Ads attribution)
-    (function () {
-      const params = new URLSearchParams(window.location.search);
-      const keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","fbclid"];
-      keys.forEach(k => {
-        const el = document.querySelector(`input[name="${k}"]`);
+    // Smooth scroll to form (tiny enhancement, no dependency)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
         if (!el) return;
-        el.value = params.get(k) || "";
-      });
-    })();
-
-    // Optional: simple FAQ behavior (closes others)
-    document.querySelectorAll("details").forEach(d => {
-      d.addEventListener("toggle", () => {
-        if (!d.open) return;
-        document.querySelectorAll("details").forEach(other => {
-          if (other !== d) other.open = false;
-        });
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   </script>
