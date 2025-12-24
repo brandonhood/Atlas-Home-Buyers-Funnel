@@ -1717,134 +1717,116 @@ body.offer-questionnaire .hero-landing .container {
   }
 }
 
-/* =========================================================
-   Reasons Section (SellEasy-style)
-   Namespace: .reasons
-   ========================================================= */
+/* ================================
+   REASONS (Atlas style + FA checks)
+================================ */
 
-.reasons {
-  padding: 60px 0;
-  background:
-    radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.10) 2px, transparent 3px) 0 0/40px 40px,
-    radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.06) 10px, transparent 11px) 0 0/40px 40px,
-    linear-gradient(180deg, #2f8fe6 0%, #2a7fdb 100%);
+.reasons{
+  padding:44px 0;
+  background:#fafafa;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
 
-@media (min-width: 768px) { .reasons { padding: 80px 0; } }
-@media (min-width: 992px) { .reasons { padding: 120px 0; } }
-
-.reasons .reasons-card {
-  border-radius: 12px;
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 22px -5px 56px rgba(19, 19, 19, 0.12);
+.reasons-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px;
 }
 
-.reasons .reasons-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  align-items: center;
+.reasons-inner{
+  display:grid;
+  gap:18px;
+  align-items:center;
 }
 
-@media (min-width: 992px) {
-  .reasons .reasons-inner { flex-direction: row; align-items: center; }
-  .reasons .reasons-media { flex: 0 0 45%; max-width: 45%; }
-  .reasons .reasons-content { flex: 0 0 55%; max-width: 55%; }
+@media (min-width: 900px){
+  .reasons-card{ padding:22px; }
+  .reasons-inner{
+    grid-template-columns: 1.15fr 1.85fr; /* image left, content right */
+    gap:26px;
+  }
 }
 
-.reasons .reasons-photo {
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+.reasons-photo{
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(229,231,235,.9);
+  box-shadow:0 10px 22px rgba(0,0,0,.08);
+  background:#fff;
 }
 
-.reasons .reasons-photo img {
-  width: 100%;
-  height: auto;
-  display: block;
+.reasons-title{
+  margin:0 0 10px;
+  font-size:22px;
+  line-height:1.25;
+  letter-spacing:-.01em;
 }
 
-.reasons .reasons-content,
-.reasons .reasons-content * {
-  color: #fff;
+.reasons-text{
+  margin:0 0 12px;
+  color:var(--muted);
+  max-width:70ch;
 }
 
-.reasons .reasons-title {
-  margin-bottom: 10px;
-  text-transform: none;
-  letter-spacing: 0;
-  line-height: 1.35;
+.reasons-kicker{
+  margin:8px 0 14px;
+  font-weight:800;
+  color:var(--text);
 }
 
-.reasons .reasons-text {
-  color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 12px;
+/* checklist layout */
+.reasons-list{
+  list-style:none;
+  padding:0;
+  margin:0 0 16px;
+  display:grid;
+  gap:10px 16px;
+  grid-template-columns: 1fr;
 }
 
-.reasons .reasons-kicker {
-  margin: 12px 0;
-  font-weight: 700;
-  text-transform: none;
+@media (min-width: 560px){
+  .reasons-list{ grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 980px){
+  .reasons-list{ grid-template-columns: 1fr 1fr 1fr; }
 }
 
-.reasons .reasons-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  display: grid;
-  gap: 10px 18px;
+.reasons-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-weight:700;
+  color:var(--text);
+  line-height:1.25;
 }
 
-@media (min-width: 768px) {
-  .reasons .reasons-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+/* Font Awesome check-circle: Atlas brand red */
+.reasons-list .fa-check-circle{
+  color:var(--brand);
+  font-size:20px;
+  line-height:1;
+  margin-top:1px;
 }
 
-.reasons .reasons-item {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-weight: 600;
-  font-size: 0.95rem;
+/* make the Reasons CTA match your existing .btn */
+.reasons-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 18px;
+  border-radius:999px;
+  border:1px solid var(--brand);
+  background:var(--brand);
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.06em;
 }
-
-.reasons .reasons-check {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 22px;
-  margin-top: 2px;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.30);
-  font-weight: 800;
-}
-
-/* CTA: intentionally NOT .btn (so it stays amber even with red button system) */
-.reasons .reasons-btn {
-  display: inline-block;
-  margin-top: 18px;
-  border-radius: 5px;
-  padding: 18px 26px;
-  font-size: 1.05rem;
-  line-height: 1;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-decoration: none;
-
-  background: #f59e0b !important;
-  border: 1px solid #f59e0b !important;
-  color: #0b1220 !important;
-}
-
-.reasons .reasons-btn:hover,
-.reasons .reasons-btn:focus {
-  background: #fbbf24 !important;
-  border-color: #fbbf24 !important;
-  color: #0b1220 !important;
+.reasons-btn:hover{
+  background:var(--brandDark);
+  border-color:var(--brandDark);
 }
