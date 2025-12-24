@@ -1718,3 +1718,24 @@ body.offer-questionnaire .hero-landing .container {
     padding-right: 0;
   }
 }
+
+/* hero photo background (behind gradients + content) */
+.hero .background-image-container{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.18;            /* adjust */
+  pointer-events: none;
+}
+
+.hero .background-image-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* keep gradient overlay above photo */
+.hero-bg{ z-index: 1; }
+
+/* keep content above everything */
+.hero-inner{ z-index: 2; }
