@@ -2,603 +2,619 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Get a fair, no-obligation cash offer. Sell your house as-is in Jacksonville with a simple, local process." />
-  <title>Sell Your House Fast in Jacksonville | Cash Offer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Get a Cash Offer | Atlas Home Buyers</title>
+  <meta name="description" content="Get a no-obligation cash offer. Sell as-is with a simple, flexible closing timeline." />
 
-  <!-- Performance: no external libraries; system fonts; minimal CSS -->
   <style>
-    /* =========================
-       Atlas REI Landing Page
-       Mobile-first, fast, modular
-       ========================= */
-
     :root{
-      --bg:#0b1220;
-      --card:#101a2e;
-      --muted:#97a3b6;
-      --text:#e9eef7;
-      --white:#ffffff;
-      --line:rgba(255,255,255,.10);
-      --brand:#4da3ff;     /* swap */
-      --brand2:#22c55e;    /* swap */
-      --danger:#ff5a5f;
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --bg:#ffffff;
+      --text:#1b1f24;
+      --muted:#5b6572;
+      --line:#e6e9ee;
+      --soft:#f6f7f9;
+      --brand:#990000;         /* Atlas red */
+      --brand-dark:#7a0000;
+      --shadow: 0 10px 30px rgba(16,24,40,.10);
       --radius: 16px;
-      --max: 1120px;
+      --max: 1100px;
     }
 
-    /* Base */
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: linear-gradient(180deg, #060a12 0%, var(--bg) 35%, #070b14 100%);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
+      background:var(--bg);
       line-height:1.5;
     }
-    img{max-width:100%; height:auto; display:block}
     a{color:inherit}
-    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .section{padding:56px 0}
-    .muted{color:var(--muted)}
-    .pill{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 12px; border:1px solid var(--line);
-      border-radius:999px; color:var(--text);
-      background: rgba(255,255,255,.04);
-      font-size:13px;
+    img{max-width:100%; display:block}
+
+    .container{max-width:var(--max); margin:0 auto; padding:0 16px}
+    .row{display:grid; gap:18px}
+    @media(min-width: 920px){
+      .row.two{grid-template-columns: 1.1fr .9fr; align-items:start; gap:28px}
     }
-    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;}
 
     /* Header */
     .topbar{
       position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(140%) blur(10px);
-      background: rgba(6,10,18,.72);
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(8px);
       border-bottom:1px solid var(--line);
     }
     .topbar-inner{
       display:flex; align-items:center; justify-content:space-between;
       padding:12px 0;
-      gap:12px;
     }
     .brand{
       display:flex; align-items:center; gap:10px; text-decoration:none;
+      font-weight:700; letter-spacing:.2px;
     }
-    .logo{
-      width:34px; height:34px; border-radius:10px;
-      background: radial-gradient(circle at 30% 30%, var(--brand), rgba(77,163,255,.2));
-      border:1px solid rgba(255,255,255,.15);
-      box-shadow: 0 10px 20px rgba(0,0,0,.25);
-      flex:0 0 auto;
+    .brand-badge{
+      width:34px;height:34px;border-radius:10px;
+      background:var(--brand); display:grid; place-items:center;
+      color:#fff; font-size:14px;
     }
-    .brand strong{font-size:14px; letter-spacing:.2px}
-    .brand span{display:block; font-size:12px; color:var(--muted)}
-    .nav{
-      display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;
-    }
-    .nav a{
-      text-decoration:none;
-      font-size:13px;
-      color:var(--muted);
-      padding:8px 10px;
-      border-radius:10px;
-      border:1px solid transparent;
-    }
-    .nav a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.03)}
     .call{
-      display:inline-flex; align-items:center; gap:8px;
-      background: rgba(34,197,94,.12);
-      border:1px solid rgba(34,197,94,.25);
-      color:var(--text);
-      padding:8px 12px;
-      border-radius:12px;
-      text-decoration:none;
-      font-size:13px;
-      white-space:nowrap;
+      display:flex; align-items:center; gap:10px; text-decoration:none;
+      padding:10px 12px; border:1px solid var(--line); border-radius:999px;
+      background:#fff;
+    }
+    .call strong{font-size:14px}
+    .call small{display:block; font-size:12px; color:var(--muted)}
+    .phone-icon{
+      width:34px;height:34px;border-radius:999px;
+      background:var(--soft); display:grid; place-items:center;
+      border:1px solid var(--line);
     }
 
     /* Hero */
     .hero{
-      padding:34px 0 12px;
+      padding:26px 0 18px;
+      background:
+        radial-gradient(1200px 500px at 50% -10%, rgba(153,0,0,.10), transparent 60%),
+        linear-gradient(#fff, #fff);
     }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      align-items:start;
-    }
-    .hero-copy{
-      padding-top:6px;
-    }
-    h1{
-      margin:10px 0 10px;
-      font-size:34px;
-      line-height:1.12;
-      letter-spacing:-.6px;
-    }
-    .subhead{font-size:16px; color:var(--muted); margin:0 0 16px}
-    .hero-bullets{
-      display:grid; gap:10px; margin:16px 0 0; padding:0; list-style:none;
-    }
-    .hero-bullets li{
-      display:flex; gap:10px; align-items:flex-start;
-      padding:10px 12px; border:1px solid var(--line);
-      border-radius:14px; background: rgba(255,255,255,.03);
-    }
-    .check{
-      width:22px; height:22px; border-radius:7px;
-      background: rgba(77,163,255,.18);
-      border:1px solid rgba(77,163,255,.35);
-      display:grid; place-items:center; flex:0 0 auto; margin-top:1px;
-    }
-
-    /* Form Card */
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    .hero-card{
       border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow:hidden;
+      background:#fff;
     }
-    .card-head{
-      padding:16px 16px 12px;
-      border-bottom:1px solid var(--line);
-      background: rgba(0,0,0,.12);
+    .hero-grid{display:grid}
+    @media(min-width: 920px){
+      .hero-grid{grid-template-columns: 1.05fr .95fr}
     }
-    .card-head strong{display:block; font-size:16px}
-    .card-head span{display:block; font-size:13px; color:var(--muted); margin-top:2px}
-    form{padding:14px 16px 16px}
-    .grid{
-      display:grid; gap:10px;
+    .hero-left{padding:18px 18px 8px}
+    @media(min-width: 920px){ .hero-left{padding:28px 28px 18px} }
+
+    .eyebrow{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 10px; border-radius:999px;
+      background:rgba(153,0,0,.08); color:var(--brand);
+      border:1px solid rgba(153,0,0,.16);
+      font-size:12px; font-weight:600;
     }
-    .grid.two{grid-template-columns:1fr}
+    h1{
+      margin:12px 0 10px;
+      font-size:28px;
+      line-height:1.15;
+      letter-spacing:-.3px;
+    }
+    @media(min-width: 920px){ h1{font-size:40px} }
+    .subhead{color:var(--muted); font-size:15px; margin:0 0 14px}
+    .bullets{display:grid; gap:10px; margin:16px 0 0; padding:0; list-style:none}
+    .bullets li{display:flex; gap:10px; align-items:flex-start; color:var(--text)}
+    .check{
+      width:22px;height:22px;border-radius:999px;
+      display:grid; place-items:center;
+      background:rgba(1,197,140,.12);
+      border:1px solid rgba(1,197,140,.25);
+      flex:0 0 auto;
+      margin-top:2px;
+    }
+    .check svg{width:14px;height:14px}
+
+    .hero-right{
+      border-top:1px solid var(--line);
+      background:linear-gradient(180deg, #fff, #fbfbfc);
+      padding:16px;
+    }
+    @media(min-width: 920px){
+      .hero-right{border-top:none; border-left:1px solid var(--line); padding:22px}
+    }
+
+    .form-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 12px 24px rgba(16,24,40,.06);
+      padding:14px;
+    }
+    .form-title{margin:0 0 10px; font-size:16px}
+    .grid2{display:grid; gap:10px}
+    @media(min-width:520px){ .grid2{grid-template-columns: 1fr 1fr} }
+
     label{font-size:12px; color:var(--muted); display:block; margin:0 0 6px}
     input, select, textarea{
       width:100%;
       padding:12px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(5,8,15,.55);
-      color:var(--text);
+      border:1px solid var(--line);
+      border-radius: 12px;
+      font:inherit;
+      background:#fff;
       outline:none;
     }
     input:focus, select:focus, textarea:focus{
-      border-color: rgba(77,163,255,.6);
-      box-shadow: 0 0 0 3px rgba(77,163,255,.15);
+      border-color: rgba(153,0,0,.45);
+      box-shadow: 0 0 0 4px rgba(153,0,0,.10);
     }
-    textarea{min-height:92px; resize:vertical}
+    textarea{min-height:90px; resize:vertical}
+
     .btn{
       width:100%;
-      padding:13px 14px;
-      border-radius:14px;
-      border:1px solid rgba(77,163,255,.45);
-      background: linear-gradient(135deg, rgba(77,163,255,1), rgba(34,197,94,1));
-      color:#06101f;
+      margin-top:10px;
+      padding:14px 14px;
+      border-radius: 14px;
+      border:1px solid var(--brand);
+      background:var(--brand);
+      color:#fff;
       font-weight:800;
-      letter-spacing:.2px;
+      letter-spacing:.6px;
+      text-transform:uppercase;
       cursor:pointer;
+      transition: background .18s ease, transform .06s ease;
     }
-    .btn:hover{filter:brightness(1.03)}
-    .fineprint{font-size:12px; color:var(--muted); margin:10px 0 0}
+    .btn:hover{background:var(--brand-dark)}
+    .btn:active{transform: translateY(1px)}
+    .privacy{
+      display:flex; gap:8px; align-items:flex-start;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+      justify-content:center;
+      text-align:center;
+    }
+    .privacy svg{width:16px;height:16px; margin-top:2px; flex:0 0 auto}
 
-    /* Sections */
-    .kicker{font-weight:700; color:var(--brand); letter-spacing:.3px; font-size:12px; text-transform:uppercase}
-    h2{margin:10px 0 8px; font-size:26px; letter-spacing:-.4px}
-    .lead{margin:0; color:var(--muted)}
-
-    /* Feature cards */
-    .cards{
-      display:grid; gap:12px; margin-top:18px;
-      grid-template-columns:1fr;
+    /* Seen in */
+    .band{
+      padding:18px 0;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:#fff;
     }
-    .mini{
-      padding:14px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-    }
-    .mini strong{display:block; margin-bottom:6px}
-    .mini p{margin:0; color:var(--muted); font-size:14px}
-
-    /* Comparison */
-    .compare{
-      display:grid; gap:12px; margin-top:18px;
-      grid-template-columns:1fr;
-    }
-    .compare .mini{border-color:rgba(255,255,255,.12)}
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      font-size:12px; padding:7px 10px; border-radius:999px;
-      border:1px solid var(--line); background: rgba(255,255,255,.03);
-      margin-bottom:10px;
-    }
-
-    /* Trust */
-    .logos{
-      display:grid; grid-template-columns:repeat(2,1fr);
-      gap:10px; margin-top:14px;
-    }
-    .logo-box{
-      border:1px dashed rgba(255,255,255,.18);
-      border-radius:14px;
-      padding:12px;
+    .band h2{
+      font-size:14px;
+      margin:0 0 14px;
+      text-transform:uppercase;
+      letter-spacing:1.2px;
       color:var(--muted);
       text-align:center;
-      font-size:13px;
-      background: rgba(255,255,255,.02);
     }
-    .testimonials{
-      display:grid; gap:12px; margin-top:16px;
-      grid-template-columns:1fr;
+    .logos{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:14px;
+      align-items:center;
+      justify-items:center;
     }
-    .quote{
-      padding:14px;
-      border-radius:16px;
+    @media(min-width: 560px){
+      .logos{grid-template-columns: repeat(5, minmax(0,1fr));}
+    }
+    .logo-box{
+      width:100%;
+      max-width:180px;
+      height:54px;                /* consistent sizing */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px;
+      border-radius:12px;
+      background:var(--soft);
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
     }
-    blockquote{margin:0; color:var(--text)}
-    .who{margin-top:10px; color:var(--muted); font-size:13px}
+    .logo-box img{
+      max-height:34px;            /* keeps them visually uniform */
+      width:auto;
+      max-width:100%;
+      object-fit:contain;
+    }
+
+    /* Sections */
+    section{padding:34px 0}
+    .section-title{
+      margin:0 0 8px;
+      font-size:22px;
+      letter-spacing:-.2px;
+      text-align:center;
+    }
+    .section-sub{margin:0 0 20px; color:var(--muted); text-align:center}
+
+    .cards{display:grid; gap:14px}
+    @media(min-width: 920px){ .cards.three{grid-template-columns: repeat(3,1fr)} }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background:#fff;
+      box-shadow: 0 10px 24px rgba(16,24,40,.05);
+      padding:16px;
+    }
+    .card h3{margin:0 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+
+    /* Compare */
+    .compare{display:grid; gap:14px}
+    @media(min-width: 920px){ .compare{grid-template-columns: 1fr 1fr} }
+    .compare h3{margin:0 0 10px}
+    .compare ul{margin:0; padding-left:18px; color:var(--muted)}
+    .compare li{margin:8px 0}
+
+    /* Testimonials */
+    .quote{font-size:14px; color:var(--muted)}
+    .who{margin-top:10px; font-weight:700; font-size:14px}
+    .stars{display:flex; gap:4px; margin-bottom:8px}
+    .stars svg{width:16px;height:16px}
 
     /* FAQ */
+    .faq{max-width:860px; margin:0 auto}
     details{
       border:1px solid var(--line);
-      border-radius:14px;
-      background: rgba(255,255,255,.02);
-      padding:12px 12px;
+      border-radius: 14px;
+      padding:12px 14px;
+      background:#fff;
+      box-shadow: 0 10px 20px rgba(16,24,40,.04);
     }
+    details + details{margin-top:10px}
     summary{
       cursor:pointer;
       font-weight:700;
       list-style:none;
     }
-    details p{margin:10px 0 0; color:var(--muted)}
-
-    /* Sticky mobile CTA */
-    .sticky-cta{
-      position:fixed; left:0; right:0; bottom:0; z-index:60;
-      padding:10px 12px;
-      background: rgba(6,10,18,.78);
-      border-top:1px solid var(--line);
-      backdrop-filter:saturate(140%) blur(10px);
-      display:flex; gap:10px; align-items:center;
-    }
-    .sticky-cta a{
-      flex:1;
-      display:inline-flex;
-      justify-content:center;
-      align-items:center;
-      gap:8px;
-      text-decoration:none;
-      padding:12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      font-weight:800;
-      font-size:14px;
-    }
-    .sticky-cta a.primary{
-      background: linear-gradient(135deg, rgba(77,163,255,1), rgba(34,197,94,1));
-      color:#06101f;
-      border-color: rgba(77,163,255,.35);
-    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:var(--muted); font-size:14px}
 
     /* Footer */
     footer{
+      padding:28px 0;
       border-top:1px solid var(--line);
-      padding:30px 0 90px; /* extra for sticky CTA */
-      color:var(--muted);
-      font-size:13px;
+      background:#0f1216;
+      color:#d7dde6;
     }
-    .footer-grid{
-      display:grid; gap:14px;
-      grid-template-columns:1fr;
-      margin-top:12px;
-    }
-    .footer-grid a{color:var(--text); text-decoration:none}
-    .footer-grid a:hover{text-decoration:underline}
+    footer a{color:#d7dde6}
+    .foot-grid{display:grid; gap:14px}
+    @media(min-width: 920px){ .foot-grid{grid-template-columns: 1.2fr .8fr} }
+    .fineprint{font-size:12px; color:#a9b4c2; line-height:1.6}
 
-    /* Desktop enhancements */
-    @media (min-width: 920px){
-      .hero-grid{grid-template-columns: 1.05fr .95fr; gap:24px}
-      h1{font-size:44px}
-      .grid.two{grid-template-columns:1fr 1fr}
-      .cards{grid-template-columns:repeat(3,1fr)}
-      .compare{grid-template-columns:repeat(2,1fr)}
-      .logos{grid-template-columns:repeat(4,1fr)}
-      .testimonials{grid-template-columns:repeat(3,1fr)}
-      .footer-grid{grid-template-columns:2fr 1fr 1fr}
-      .sticky-cta{display:none}
+    /* Sticky mobile CTA */
+    .sticky{
+      position:fixed; left:0; right:0; bottom:0;
+      padding:10px 12px;
+      background:rgba(255,255,255,.94);
+      border-top:1px solid var(--line);
+      backdrop-filter: blur(8px);
+      z-index:60;
+      display:block;
     }
-
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
+    .sticky .container{display:flex; gap:10px; align-items:center; justify-content:space-between}
+    .sticky a{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 14px;
+      border-radius: 999px;
+      border:1px solid var(--brand);
+      background:var(--brand);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+      flex:1;
     }
+    @media(min-width: 920px){ .sticky{display:none} }
   </style>
 </head>
 
 <body>
-  <!-- Sticky Header -->
-  <header class="topbar">
+  <!-- Sticky header -->
+  <div class="topbar">
     <div class="container">
       <div class="topbar-inner">
-        <a class="brand" href="#top" aria-label="Atlas Home Buyers">
-          <div class="logo" aria-hidden="true"></div>
-          <div>
-            <strong>Atlas Home Buyers</strong>
-            <span>Local Jacksonville Home Buyer</span>
-          </div>
+        <a class="brand" href="#" aria-label="Atlas Home Buyers">
+          <span class="brand-badge">A</span>
+          <span>Atlas Home Buyers</span>
         </a>
 
-        <nav class="nav" aria-label="Primary">
-          <a href="#process">Process</a>
-          <a href="#trust">Trust</a>
-          <a href="#faq">FAQ</a>
-          <a class="call" href="tel:+19045551234" aria-label="Call Atlas Home Buyers">
-            📞 <span>Call (904) 555-1234</span>
-          </a>
-        </nav>
+        <a class="call" href="tel:9049449419">
+          <span class="phone-icon" aria-hidden="true">☎</span>
+          <span>
+            <small>Call / Text</small>
+            <strong>(904) 944-9419</strong>
+          </span>
+        </a>
       </div>
     </div>
-  </header>
+  </div>
 
-  <!-- HERO -->
-  <main id="top" class="hero">
+  <!-- Hero -->
+  <main class="hero">
     <div class="container">
-      <div class="hero-grid">
-        <!-- Left: Messaging -->
-        <div class="hero-copy">
-          <div class="pill">✅ No repairs • ✅ No commissions • ✅ Close on your timeline</div>
-          <h1>Sell Your Jacksonville House Fast — Get a Cash Offer</h1>
-          <p class="subhead">
-            Placeholder copy: If you’re dealing with repairs, probate, foreclosure pressure, tenants, or just want a clean exit,
-            request a **no-obligation** cash offer. Simple process. Local team. Clear next steps.
-          </p>
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="eyebrow">Jacksonville • Local home buyer</div>
+            <h1>Get a Cash Offer for Your Jacksonville Home</h1>
+            <p class="subhead">
+              Sell as-is with a simple process and a closing timeline that works for you.
+              No commissions. No repairs required.
+            </p>
 
-          <ul class="hero-bullets">
-            <li>
-              <div class="check" aria-hidden="true">✓</div>
-              <div>
-                <strong>Sell as-is</strong>
-                <div class="muted">No cleanup, no fixing, no showings.</div>
-              </div>
-            </li>
-            <li>
-              <div class="check" aria-hidden="true">✓</div>
-              <div>
-                <strong>Fast + flexible closing</strong>
-                <div class="muted">7–14 days or later if you need more time.</div>
-              </div>
-            </li>
-            <li>
-              <div class="check" aria-hidden="true">✓</div>
-              <div>
-                <strong>Transparent next steps</strong>
-                <div class="muted">You’ll know exactly what happens and when.</div>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Right: Above-the-fold form -->
-        <aside class="card" aria-label="Cash Offer Form">
-          <div class="card-head">
-            <strong>Get Your Cash Offer</strong>
-            <span>Enter your property details — we’ll follow up quickly.</span>
+            <ul class="bullets">
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><strong>As-is purchase</strong> (skip clean-up and repairs)</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><strong>No listing</strong> (no showings, no open houses)</span>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span><strong>Fast close available</strong> (or pick a later date)</span>
+              </li>
+            </ul>
           </div>
 
-          <!-- Replace action with your endpoint (GHL webhook, Formspree, etc.) -->
-          <form id="leadForm" action="#" method="post" novalidate>
-            <!-- Tracking fields (auto-populated by JS) -->
-            <input type="hidden" name="utm_source" />
-            <input type="hidden" name="utm_medium" />
-            <input type="hidden" name="utm_campaign" />
-            <input type="hidden" name="utm_term" />
-            <input type="hidden" name="utm_content" />
-            <input type="hidden" name="gclid" />
-            <input type="hidden" name="fbclid" />
-            <input type="hidden" name="landing_page" value="atlas-rei-googleads-v1" />
+          <div class="hero-right" id="form">
+            <div class="form-card">
+              <p class="form-title"><strong>Get My Free Cash Offer</strong></p>
 
-            <div class="grid">
-              <div>
-                <label for="address">Property Address *</label>
-                <input id="address" name="address" type="text" autocomplete="street-address" required placeholder="123 Main St" />
-              </div>
-
-              <div class="grid two">
-                <div>
-                  <label for="city">City *</label>
-                  <input id="city" name="city" type="text" autocomplete="address-level2" required placeholder="Jacksonville" />
+              <!-- Replace action with your endpoint / GHL / webhook -->
+              <form id="leadForm" method="post" action="#">
+                <div class="grid2">
+                  <div>
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" autocomplete="name" required />
+                  </div>
+                  <div>
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" inputmode="tel" autocomplete="tel" required />
+                  </div>
                 </div>
-                <div>
-                  <label for="state">State *</label>
-                  <input id="state" name="state" type="text" autocomplete="address-level1" required placeholder="FL" />
+
+                <div class="grid2">
+                  <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" />
+                  </div>
+                  <div>
+                    <label for="timeline">Ideal timing</label>
+                    <select id="timeline" name="timeline" required>
+                      <option value="" selected disabled>Select…</option>
+                      <option>ASAP</option>
+                      <option>2–4 weeks</option>
+                      <option>1–2 months</option>
+                      <option>Just exploring</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
 
-              <div class="grid two">
                 <div>
-                  <label for="name">Full Name *</label>
-                  <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+                  <label for="address">Property address</label>
+                  <input id="address" name="address" autocomplete="street-address" required />
                 </div>
+
+                <div class="grid2">
+                  <div>
+                    <label for="city">City</label>
+                    <input id="city" name="city" autocomplete="address-level2" />
+                  </div>
+                  <div>
+                    <label for="zip">Zip</label>
+                    <input id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" />
+                  </div>
+                </div>
+
                 <div>
-                  <label for="phone">Phone *</label>
-                  <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="(904) 555-1234" inputmode="tel" />
+                  <label for="notes">Anything we should know?</label>
+                  <textarea id="notes" name="notes" placeholder="Optional: repairs needed, tenant situation, inherited, etc."></textarea>
                 </div>
-              </div>
 
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" />
-              </div>
+                <!-- Hidden attribution fields -->
+                <input type="hidden" name="utm_source" />
+                <input type="hidden" name="utm_medium" />
+                <input type="hidden" name="utm_campaign" />
+                <input type="hidden" name="utm_term" />
+                <input type="hidden" name="utm_content" />
+                <input type="hidden" name="gclid" />
+                <input type="hidden" name="fbclid" />
 
-              <div>
-                <label for="timing">Ideal Timing *</label>
-                <select id="timing" name="timing" required>
-                  <option value="" selected disabled>Select one</option>
-                  <option>ASAP</option>
-                  <option>2–4 weeks</option>
-                  <option>1–2 months</option>
-                  <option>Just exploring</option>
-                </select>
-              </div>
+                <button class="btn" type="submit">Get My Offer</button>
 
-              <div>
-                <label for="notes">Situation (optional)</label>
-                <textarea id="notes" name="notes" placeholder="Repairs, probate, foreclosure notice, tenants, etc."></textarea>
-              </div>
-
-              <button class="btn" type="submit">Get My Cash Offer</button>
-              <p class="fineprint">
-                By submitting, you agree to be contacted by phone/text/email. Message/data rates may apply.
-                This is not a commitment to purchase.
-              </p>
-
-              <div id="formError" class="sr-only" role="alert"></div>
+                <div class="privacy" aria-live="polite">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M6 11h12v9H6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>We respect your privacy and won’t share your info without consent.</span>
+                </div>
+              </form>
             </div>
-          </form>
-        </aside>
+
+            <p style="margin:12px 0 0; color:var(--muted); font-size:12px; text-align:center;">
+              By submitting, you agree to be contacted about your request (calls/texts may apply).
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </main>
 
-  <!-- AS SEEN ON / TRUST STRIP -->
-  <section class="section" id="trust">
+  <!-- Seen In -->
+  <div class="band">
     <div class="container">
-      <div class="kicker">Trust signals</div>
-      <h2>Local, straightforward, and built for speed</h2>
-      <p class="lead">
-        Placeholder trust strip: “As seen on” logos, review badges, local association badges, or your title company logo.
-      </p>
+      <h2>As Seen In</h2>
 
-      <div class="logos" aria-label="Logo placeholders">
-        <div class="logo-box">Logo Placeholder</div>
-        <div class="logo-box">Review Badge</div>
-        <div class="logo-box">Local Media</div>
-        <div class="logo-box">Accreditation</div>
+      <!-- Replace src with your SVGs -->
+      <div class="logos" aria-label="Media logos">
+        <div class="logo-box"><img src="images/Fox Logo.svg" alt="FOX" loading="lazy" /></div>
+        <div class="logo-box"><img src="images/NBC Logo.svg" alt="NBC" loading="lazy" /></div>
+        <div class="logo-box"><img src="images/CBS Logo.svg" alt="CBS" loading="lazy" /></div>
+        <div class="logo-box"><img src="images/ABC News Logo.svg" alt="ABC News" loading="lazy" /></div>
+        <div class="logo-box"><img src="images/Bezinga Logo.svg" alt="Benzinga" loading="lazy" /></div>
       </div>
+    </div>
+  </div>
 
-      <div class="testimonials" aria-label="Testimonials">
-        <div class="quote">
-          <blockquote>“Placeholder testimonial about speed, clarity, and how easy the process was.”</blockquote>
-          <div class="who">— Seller Name, Jacksonville</div>
+  <!-- 3 Steps -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Sell Your Home in 3 Simple Steps</h2>
+      <p class="section-sub">Clear process. No pressure. Your timeline.</p>
+
+      <div class="cards three">
+        <div class="card">
+          <h3>1) Tell us about the property</h3>
+          <p>Submit the form (or call/text). We’ll ask a few quick questions to understand your situation.</p>
         </div>
-        <div class="quote">
-          <blockquote>“Placeholder testimonial about selling as-is with no repairs and no surprises.”</blockquote>
-          <div class="who">— Seller Name, Duval County</div>
+        <div class="card">
+          <h3>2) Receive a cash offer</h3>
+          <p>We evaluate condition, location, and repairs. You’ll get a clear offer with no obligation.</p>
         </div>
-        <div class="quote">
-          <blockquote>“Placeholder testimonial about flexibility on closing date and respectful communication.”</blockquote>
-          <div class="who">— Seller Name, Florida</div>
+        <div class="card">
+          <h3>3) Choose your closing date</h3>
+          <p>Close fast if needed, or pick a date that fits. We’ll handle the details end-to-end.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3-STEP PROCESS -->
-  <section class="section" id="process">
+  <!-- Benefits vs Traditional -->
+  <section style="background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
     <div class="container">
-      <div class="kicker">Our process</div>
-      <h2>Sell your house in 3 simple steps</h2>
-      <p class="lead">Simple, predictable, and designed to reduce stress for motivated sellers.</p>
-
-      <div class="cards">
-        <div class="mini">
-          <strong>1) Tell us about the property</strong>
-          <p>Submit the form (address + basic details). We’ll confirm a few items and understand your timing.</p>
-        </div>
-        <div class="mini">
-          <strong>2) Get a clear cash offer</strong>
-          <p>We evaluate condition and local factors. No pressure. If it helps, we move forward.</p>
-        </div>
-        <div class="mini">
-          <strong>3) Close on your timeline</strong>
-          <p>Pick a closing date that fits. We coordinate the paperwork and typical closing costs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFITS VS TRADITIONAL -->
-  <section class="section">
-    <div class="container">
-      <div class="kicker">Why this works for Google Ads cold traffic</div>
-      <h2>Fast, as-is options without the usual friction</h2>
-      <p class="lead">
-        iBuySD uses a simple “benefits vs traditional” contrast to kill doubt quickly and keep the funnel moving.  [oai_citation:1‡I Buy SD](https://www.ibuysd.com/)
-      </p>
+      <h2 class="section-title">A Faster Alternative to Listing</h2>
+      <p class="section-sub">Here’s the tradeoff most sellers care about.</p>
 
       <div class="compare">
-        <div class="mini">
-          <div class="tag">✅ Selling to Atlas (placeholder)</div>
-          <p class="muted">No commissions, no repairs, no open houses, flexible closing, clear process.</p>
+        <div class="card">
+          <h3>Atlas Home Buyers</h3>
+          <ul>
+            <li>No listing required (no showings)</li>
+            <li>Sell as-is (skip repairs and clean-up)</li>
+            <li>Flexible closing date</li>
+            <li>Clear, straightforward process</li>
+          </ul>
         </div>
-        <div class="mini">
-          <div class="tag">⏳ Traditional sale (placeholder)</div>
-          <p class="muted">Showings, buyer financing delays, inspections, repair requests, uncertainty.</p>
+        <div class="card">
+          <h3>Traditional Sale</h3>
+          <ul>
+            <li>Showings, open houses, and scheduling</li>
+            <li>Repairs, staging, cleaning, and punch lists</li>
+            <li>Buyer financing risk + delays</li>
+            <li>Longer timeline and uncertainty</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SITUATIONS GRID -->
-  <section class="section">
+  <!-- Situations -->
+  <section>
     <div class="container">
-      <div class="kicker">Common situations</div>
-      <h2>Sell for any reason. Any condition.</h2>
-      <p class="lead">Use this to match “cold intent” keywords with instant relevance.</p>
+      <h2 class="section-title">We Help in Common Seller Situations</h2>
+      <p class="section-sub">Placeholder list. Swap to match your highest-intent Google Ads traffic.</p>
 
-      <div class="cards">
-        <div class="mini"><strong>Repairs / code issues</strong><p>Outdated, damaged, or just too much to fix right now.</p></div>
-        <div class="mini"><strong>Probate / inherited</strong><p>Need a clean plan to move forward with less hassle.</p></div>
-        <div class="mini"><strong>Foreclosure pressure</strong><p>Need clarity fast and a timeline that helps you.</p></div>
-        <div class="mini"><strong>Tired landlord</strong><p>Tenants, vacancies, maintenance, or just done.</p></div>
-        <div class="mini"><strong>Financial hardship</strong><p>Reduce holding costs and uncertainty with a direct option.</p></div>
-        <div class="mini"><strong>Relocation / life change</strong><p>Move on without repairs, showings, or long timelines.</p></div>
+      <div class="cards three">
+        <div class="card"><h3>Repairs needed</h3><p>Outdated, damaged, or code issues—sell as-is.</p></div>
+        <div class="card"><h3>Inheritance / probate</h3><p>Need a clean, straightforward sale process.</p></div>
+        <div class="card"><h3>Financial pressure</h3><p>Late payments, liens, or urgent timelines.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="container">
+      <h2 class="section-title">What Sellers Say</h2>
+      <p class="section-sub">Use real reviews. Keep it short and believable.</p>
+
+      <div class="cards three">
+        <div class="card">
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+          </div>
+          <div class="quote">“Super easy process. Clear communication and we closed on the date we needed.”</div>
+          <div class="who">— Seller Name</div>
+        </div>
+
+        <div class="card">
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+          </div>
+          <div class="quote">“They handled the details and made it simple. No repairs, no showings.”</div>
+          <div class="who">— Seller Name</div>
+        </div>
+
+        <div class="card">
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3l-6.2 3.3 1.2-7-5-4.9 7-1 3-6.3 3 6.3 7 1-5 4.9 1.2 7z"/></svg>
+          </div>
+          <div class="quote">“Fast, professional, and transparent. Would recommend.”</div>
+          <div class="who">— Seller Name</div>
+        </div>
       </div>
 
-      <div style="margin-top:18px" class="card">
-        <div class="card-head">
-          <strong>Want a quick answer on your options?</strong>
-          <span>Request your cash offer and we’ll take the next step from there.</span>
-        </div>
-        <div style="padding:14px 16px 16px">
-          <a class="btn" href="#top">Start with the Offer Form</a>
-        </div>
+      <div style="text-align:center; margin-top:18px;">
+        <a href="#form" style="display:inline-block; padding:12px 16px; border-radius:999px; border:1px solid var(--brand); background:var(--brand); color:#fff; text-decoration:none; font-weight:800; text-transform:uppercase; letter-spacing:.6px;">
+          Get My Offer
+        </a>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section" id="faq">
+  <section>
     <div class="container">
-      <div class="kicker">FAQ</div>
-      <h2>Quick answers</h2>
-      <p class="lead">Keep these short and compliance-friendly. Add more later if needed.</p>
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-sub">Short answers reduce friction for cold traffic.</p>
 
-      <div class="grid" style="margin-top:16px">
+      <div class="faq">
         <details>
-          <summary>How fast can I sell?</summary>
-          <p>Placeholder: Depending on title and situation, closing can be as fast as 7–14 days, or later if you need more time.</p>
+          <summary>How fast can you close?</summary>
+          <p>It depends on title and your situation. Some closings happen quickly, and others happen on a date you choose.</p>
         </details>
-
         <details>
-          <summary>Do I need to make repairs or clean up?</summary>
-          <p>Placeholder: No. We can buy as-is, and you can leave unwanted items behind in many cases.</p>
+          <summary>Do I need to make repairs?</summary>
+          <p>No. We buy homes as-is. You can leave unwanted items behind if needed (case-by-case).</p>
         </details>
-
         <details>
-          <summary>Are there fees or commissions?</summary>
-          <p>Placeholder: No commissions. We typically cover standard closing costs (confirm in your offer details).</p>
+          <summary>What fees do I pay?</summary>
+          <p>We’ll explain the numbers clearly. There’s no obligation and you can compare your options.</p>
         </details>
-
         <details>
-          <summary>How do you determine the offer?</summary>
-          <p>Placeholder: Condition, location, repair scope, holding costs, and local market factors.</p>
+          <summary>How do you determine an offer?</summary>
+          <p>We look at condition, location, and needed repairs, plus holding costs and market activity.</p>
         </details>
       </div>
     </div>
@@ -607,136 +623,65 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <strong style="color:var(--text)">Atlas Home Buyers</strong>
-      <div class="muted">Jacksonville, FL • (904) 555-1234 • hello@yourdomain.com</div>
-
-      <div class="footer-grid">
+      <div class="foot-grid">
         <div>
-          <p>
-            Disclosures (placeholder): This website is for informational purposes and does not constitute legal or financial advice.
-            Atlas Home Buyers is not acting as a real estate broker. Terms vary by property and situation.
-          </p>
-          <p class="muted">
-            For Google Ads compliance: keep privacy policy accessible, avoid misleading “guaranteed” claims,
-            and ensure contact consent language is present on the form.
-          </p>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+            <span class="brand-badge" style="background:#fff;color:#0f1216;">A</span>
+            <strong>Atlas Home Buyers</strong>
+          </div>
+          <div class="fineprint">
+            This website is for informational purposes only and does not constitute legal or financial advice.
+            Any timelines, savings, or outcomes depend on your unique situation and property.
+          </div>
         </div>
 
-        <div>
-          <div><a href="#" rel="nofollow">Privacy Policy</a></div>
-          <div><a href="#" rel="nofollow">Terms</a></div>
-          <div><a href="#faq">FAQ</a></div>
-        </div>
-
-        <div>
-          <div class="muted">Office hours (placeholder)</div>
-          <div>Mon–Fri: 9am–6pm</div>
-          <div style="margin-top:10px"><a class="call" href="tel:+19045551234">📞 Call Now</a></div>
+        <div class="fineprint">
+          <strong>Contact</strong><br/>
+          Phone: <a href="tel:9049449419">(904) 944-9419</a><br/>
+          Service area: Jacksonville, FL & surrounding areas<br/>
+          <br/>
+          <strong>Privacy</strong><br/>
+          We do not sell your personal information.
         </div>
       </div>
 
-      <div class="muted" style="margin-top:14px">
+      <div class="fineprint" style="margin-top:14px; border-top:1px solid rgba(255,255,255,.12); padding-top:12px;">
         © <span id="year"></span> Atlas Home Buyers. All rights reserved.
-      </div>
-
-      <!-- Optional: link to your HVCO PDF (placeholder) -->
-      <div class="muted" style="margin-top:10px">
-        Optional resource link placeholder: “7 Fatal Mistakes That Make Selling Your House a Burden”  [oai_citation:2‡7 Fatal Mistakes That Make Selling Your House a Burden.pdf](file-service://file-2T8hs7jfDpv8nGTYGDLNAc)
       </div>
     </div>
   </footer>
 
-  <!-- Mobile Sticky CTA -->
-  <div class="sticky-cta" role="navigation" aria-label="Sticky call to action">
-    <a href="tel:+19045551234">📞 Call</a>
-    <a class="primary" href="#top">Get Offer</a>
+  <!-- Sticky mobile CTA -->
+  <div class="sticky" role="region" aria-label="Quick action">
+    <div class="container">
+      <a href="#form">Get My Offer</a>
+    </div>
   </div>
 
-  <!-- Minimal JS: tracking capture, light validation, UX helpers -->
   <script>
+    // Set year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Capture UTM + gclid/fbclid into hidden fields (Google Ads attribution)
     (function () {
-      // Footer year
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Helpers
-      const $ = (sel) => document.querySelector(sel);
-      const form = $("#leadForm");
-      const errorBox = $("#formError");
-
-      // Parse query params (UTM, gclid, etc.)
       const params = new URLSearchParams(window.location.search);
-      const fields = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","fbclid"];
-      fields.forEach((k) => {
-        const v = params.get(k) || "";
-        const input = form.querySelector(`input[name="${k}"]`);
-        if (input) input.value = v;
-
-        // persist for later pages (optional)
-        if (v) localStorage.setItem(k, v);
-      });
-
-      // Rehydrate tracking from localStorage if missing
-      fields.forEach((k) => {
-        const input = form.querySelector(`input[name="${k}"]`);
-        if (input && !input.value) {
-          const saved = localStorage.getItem(k) || "";
-          if (saved) input.value = saved;
-        }
-      });
-
-      // Basic form validation (fast + simple)
-      function showError(msg) {
-        errorBox.classList.remove("sr-only");
-        errorBox.textContent = msg;
-        alert(msg); // simple, reliable on mobile. Replace with inline UI later if you want.
-      }
-
-      form.addEventListener("submit", function (e) {
-        // If you haven't wired the endpoint yet, prevent submit.
-        if (form.getAttribute("action") === "#") {
-          e.preventDefault();
-          showError("Form endpoint not set yet. Add your webhook/handler to the form action.");
-          return;
-        }
-
-        // Minimal required checks
-        const requiredIds = ["address","city","state","name","phone","timing"];
-        for (const id of requiredIds) {
-          const el = document.getElementById(id);
-          if (!el || !el.value.trim()) {
-            e.preventDefault();
-            showError("Please complete the required fields so we can get you the right next step.");
-            el && el.focus();
-            return;
-          }
-        }
+      const keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","fbclid"];
+      keys.forEach(k => {
+        const el = document.querySelector(`input[name="${k}"]`);
+        if (!el) return;
+        el.value = params.get(k) || "";
       });
     })();
-  </script>
 
-  <!-- Optional: FAQ schema (edit questions/answers to match your final copy) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How fast can I sell?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Depending on your situation, closing can be as fast as 7–14 days, or later if you need more time." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need to make repairs or clean up?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. We can buy as-is and discuss the simplest path forward based on your property." }
-      },
-      {
-        "@type": "Question",
-        "name": "Are there fees or commissions?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No commissions. Offer terms vary by property and situation." }
-      }
-    ]
-  }
+    // Optional: simple FAQ behavior (closes others)
+    document.querySelectorAll("details").forEach(d => {
+      d.addEventListener("toggle", () => {
+        if (!d.open) return;
+        document.querySelectorAll("details").forEach(other => {
+          if (other !== d) other.open = false;
+        });
+      });
+    });
   </script>
 </body>
 </html>
