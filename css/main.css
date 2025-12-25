@@ -1868,3 +1868,62 @@ section.hero-landing .background-image-container img{
   .hero-offer-trust{ flex-direction:column; gap:8px; }
   .hero-offer-trust-logos img{ height:26px; }
 }
+/* ===== Force QG theme to stop blowing up trust images + buttons ===== */
+
+.hero-offer{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:10px !important;
+}
+
+.hero-offer-row{
+  display:grid !important;
+  grid-template-columns: 1fr auto !important;
+  gap:10px !important;
+  align-items:stretch !important;
+}
+
+/* QG sets .btn to width:100% — override only inside hero offer row */
+.hero-offer-row .btn{
+  width:auto !important;
+  display:inline-flex !important;
+  white-space:nowrap !important;
+  margin:0 !important;          /* QG adds bottom margin */
+  padding:14px 18px !important; /* keep it tight */
+}
+
+/* QG form styles can add spacing */
+.hero-offer-row input{
+  margin:0 !important;
+}
+
+/* Trust area row */
+.hero-offer-trust{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:12px !important;
+}
+
+.hero-offer-trust-logos{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+}
+
+/* This beats img.max-width and other theme rules */
+.hero-offer-trust-logos img,
+.hero-offer-trust-logos img.trust-logo{
+  width:auto !important;
+  height:28px !important;
+  max-width:140px !important;
+  object-fit:contain !important;
+}
+
+/* mobile stack */
+@media (max-width: 640px){
+  .hero-offer-row{ grid-template-columns: 1fr !important; }
+  .hero-offer-row .btn{ width:100% !important; }
+  .hero-offer-trust{ flex-direction:column !important; gap:8px !important; }
+  .hero-offer-trust-logos img{ height:26px !important; }
+}
