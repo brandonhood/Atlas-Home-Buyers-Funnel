@@ -1927,3 +1927,80 @@ section.hero-landing .background-image-container img{
   .hero-offer-trust{ flex-direction:column !important; gap:8px !important; }
   .hero-offer-trust-logos img{ height:26px !important; }
 }
+
+/* ===== HERO OFFER: make the new HTML structure work ===== */
+
+.hero-offer{
+  margin:10px auto 10px;
+  max-width:760px;
+  padding:12px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  text-align:left;
+
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* input + button row */
+.hero-offer-row{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:10px;
+  align-items:stretch;
+}
+
+.hero-offer-row input{
+  width:100%;
+}
+
+/* your global .btn is width:100% → override ONLY here */
+.hero-offer-row .btn{
+  width:auto !important;
+  display:inline-flex !important;
+  white-space:nowrap;
+  margin:0 !important;
+  padding:14px 18px;
+}
+
+/* trust line + logos */
+.hero-offer-trust{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  text-align:center;
+}
+
+.hero-offer-trust-text{
+  font-size:12px;
+  font-weight:800;
+  color:var(--muted);
+  letter-spacing:.02em;
+}
+
+.hero-offer-trust-logos{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* this is the “stop being huge” rule */
+.hero-offer-trust-logos img{
+  width:auto !important;
+  height:28px !important;
+  max-width:140px !important;
+  object-fit:contain;
+  display:block;
+}
+
+/* mobile */
+@media (max-width: 640px){
+  .hero-offer-row{ grid-template-columns: 1fr; }
+  .hero-offer-row .btn{ width:100% !important; }
+  .hero-offer-trust{ flex-direction:column; gap:8px; }
+  .hero-offer-trust-logos img{ height:26px !important; }
+}
