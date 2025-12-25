@@ -1819,3 +1819,58 @@ section.hero-landing .background-image-container img{
     height: 28px;
   }
 }
+/* ================================
+   Hero Offer – Trust Inside Card
+   ================================ */
+
+.hero-offer{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* top row: input + button */
+.hero-offer-row{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+@media (max-width: 640px){
+  .hero-offer-row{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* trust section */
+.hero-offer-trust{
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+  text-align: center;
+}
+
+.hero-offer-trust-text{
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.hero-offer-trust-logos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-offer-trust-logos img{
+  height: 30px;
+  width: auto;
+}
+
+@media (max-width: 640px){
+  .hero-offer-trust-logos img{
+    height: 26px;
+  }
+}
