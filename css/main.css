@@ -1784,93 +1784,87 @@ section.hero-landing .background-image-container img{
 .hero-bg{ position:absolute; inset:0; z-index:1; }
 .hero-inner{ position:relative; z-index:2; }
 
-/* ================================
-   Hero Trust (Google + BBB)
-   ================================ */
-
-.hero-trust{
-  margin-top: 14px;
-  text-align: center;
-}
-
-.hero-trust-line{
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-
-.hero-trust-logos{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-}
-
-.hero-trust-logos img{
-  height: 34px;
-  width: auto;
-}
-
-@media (max-width: 640px){
-  .hero-trust-logos img{
-    height: 28px;
-  }
-}
-/* ================================
-   Hero Offer – Trust Inside Card
-   ================================ */
-
+/* --- HERO OFFER (row + trust logos inside same box) --- */
 .hero-offer{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  margin:10px auto 10px;
+  max-width:760px;
+  padding:12px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  text-align:left;
+
+  /* override the old grid */
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
-/* top row: input + button */
+/* input + button row */
 .hero-offer-row{
-  display: grid;
+  display:grid;
   grid-template-columns: 1fr auto;
-  gap: 10px;
+  gap:10px;
 }
 
-@media (max-width: 640px){
-  .hero-offer-row{
-    grid-template-columns: 1fr;
-  }
+.hero-offer-row input{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px 14px;
+  font-size:16px;
+  outline:none;
+  background:var(--panel);
 }
 
-/* trust section */
+.hero-offer-row input:focus{
+  border-color:rgba(153,0,0,.35);
+  box-shadow:0 0 0 4px rgba(153,0,0,.08);
+  background:#fff;
+}
+
+.hero-offer-row .btn{
+  width:auto;              /* keeps CTA tight */
+  padding:14px 18px;
+  white-space:nowrap;
+}
+
+/* trust line + logos */
 .hero-offer-trust{
-  border-top: 1px solid var(--line);
-  padding-top: 10px;
-  text-align: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding-top:2px;
+  text-align:center;
 }
 
 .hero-offer-trust-text{
-  display: block;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  margin-bottom: 6px;
+  font-size:12px;
+  font-weight:800;
+  color:var(--muted);
+  letter-spacing:.02em;
 }
 
 .hero-offer-trust-logos{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
 .hero-offer-trust-logos img{
-  height: 30px;
-  width: auto;
+  height:28px;            /* key: prevents giant logos */
+  width:auto;
+  max-width:140px;
+  object-fit:contain;
+  display:block;
 }
 
+/* mobile stack */
 @media (max-width: 640px){
-  .hero-offer-trust-logos img{
-    height: 26px;
-  }
+  .hero-offer-row{ grid-template-columns: 1fr; }
+  .hero-offer-row .btn{ width:100%; }
+  .hero-offer-trust{ flex-direction:column; gap:8px; }
+  .hero-offer-trust-logos img{ height:26px; }
 }
